@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/action/allgoods_servlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/action/deleteservlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/action/loginservlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/action/submitservlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/dao/ApplicantDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/db/SQLDB.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/entity/Applicant.java" charset="GBK" />
+  </component>
+</project>
