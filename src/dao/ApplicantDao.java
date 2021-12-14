@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import db.SQLDB;
 import entity.Applicant;
+import entity.Stuff;
 import service.ApplicantService;
 
 public class ApplicantDao {
@@ -74,7 +76,7 @@ public class ApplicantDao {
 		}
 		return Lastname;
 	}
-	
+
 	public String srhaddr(String user) { // 使用该方法查询密码，从传入账号，再返回再数据库中的姓。
 		SQLDB db = new SQLDB();
 		String sql = "select addr from user_pass where user_name =?";
@@ -93,7 +95,7 @@ public class ApplicantDao {
 		}
 		return addr;
 	}
-	
+
 	// 添加个人用户信息
 	public int add(Applicant app) {
 		SQLDB db = new SQLDB();
@@ -110,15 +112,15 @@ public class ApplicantDao {
 		return db.update(sql, obj);
 	}
 
-	
+
 	//修改密码
 	public int repass(Applicant app) {
 		SQLDB db = new SQLDB();
 		String sql = "update user_pass set pass=? where user_name = ?";
 		Object[] obj = {app.getMima(),app.getZhanghao()};
 		return db.update(sql, obj);
-	} 
-	
+	}
+
 	//查询所有数据
 	public List<Applicant> srhAll(int pageNo) {
 
@@ -138,7 +140,7 @@ public class ApplicantDao {
 				String zh_firstname = rs.getString(3);
 				String zh_lastname = rs.getString(4);
 				String zh_addr = rs.getString(5);
-				
+
 				// 将书库中的一个记录的所有字段赋值给t，把t加入集合
 				t.setZhanghao(zh_name);
 				t.setAddr(zh_addr);
@@ -164,7 +166,7 @@ public class ApplicantDao {
 		db.close();
 		return result;
 	}
-	
+
 	public int getCount_dingdan() {
 		SQLDB db = new SQLDB();
 		String sql = "select count(*) from t_dingdan ;";
@@ -172,15 +174,15 @@ public class ApplicantDao {
 		db.close();
 		return result;
 	}
-	
+
 	public int delete(String user_name) {		//根据user_name进行删除
 		SQLDB db = new SQLDB();
 		String sql = "delete from user_pass where user_name =? ;";
 		Object[] obj = { user_name };
 		return db.update(sql, obj);
-}
-	
-	
+	}
+
+
 	public Applicant srhByOne(int id) {
 		SQLDB db = new SQLDB();
 		String sql = "select * from user_pass where id = ?";
@@ -209,8 +211,8 @@ public class ApplicantDao {
 		}
 		return t;
 	}
-	
-	
+
+
 	public List<Applicant> srhAll_dingdan(int pageNo) {
 
 		List<Applicant> list = new LinkedList<Applicant>();
@@ -255,7 +257,7 @@ public class ApplicantDao {
 				tding.setFahuo_addr(fahuo_addr);
 				tding.setShouhuo_addr(shouhuo_addr);
 				tding.setTuoyun_money(tuoyun_money);
-				tding.setShonghuo_money(shonghuo_money);		
+				tding.setShonghuo_money(shonghuo_money);
 				tding.setBaoxian_money(baoxian_money);
 				tding.setJiehuo_money(jiehuo_money);
 				tding.setPay_money(pay_money);
@@ -271,7 +273,7 @@ public class ApplicantDao {
 		return list;
 	}
 
-	
+
 	public List<Applicant> srhAll_dingdanall(int i) {
 
 		List<Applicant> list = new LinkedList<Applicant>();
@@ -316,7 +318,7 @@ public class ApplicantDao {
 				tding.setFahuo_addr(fahuo_addr);
 				tding.setShouhuo_addr(shouhuo_addr);
 				tding.setTuoyun_money(tuoyun_money);
-				tding.setShonghuo_money(shonghuo_money);		
+				tding.setShonghuo_money(shonghuo_money);
 				tding.setBaoxian_money(baoxian_money);
 				tding.setJiehuo_money(jiehuo_money);
 				tding.setPay_money(pay_money);
@@ -332,37 +334,88 @@ public class ApplicantDao {
 		return list;
 	}
 
-	
+	//添加员工
+	public void addAStuff(Stuff stuff){
+		//TO-DO: 需要沟通数据库中的员工表命
+		//Step 1: 建立连接
+		SQLDB sqldb = new SQLDB();
+		//Step 2: sql语句
+		String sql = "insert into stuff_tb values (?,?);";
+		//Step 3：sql语句执行
+		Object[] obj = {stuff.getStuffName(), stuff.getStuffNumber()};
+		sqldb.update(sql, obj);
+	}
+
+	//查找员工
+	public Stuff getAStuffbyNumber(String stuffNumber) throws SQLException {
+		SQLDB sqldb = new SQLDB();
+		String sql = "select * from stuff_tb where stuff_number = ?;";
+		Object[] obj = {stuffNumber};
+		ResultSet rs = sqldb.search(sql, obj);
+		return new Stuff(rs.getString(1), rs.getString(2));
+	}
+
+	//查找多个员工
+	public List<Stuff> listStuffs(String stuffNumber) throws SQLException {
+		List<Stuff> stuffList = new ArrayList<>();
+		SQLDB sqldb = new SQLDB();
+		String sql = "select * from stuff_tb where stuff_number like ?%;";
+		Object[] obj = {stuffNumber};
+		ResultSet rs = sqldb.search(sql, obj);
+		while(rs.next()){
+			Stuff stuff = new Stuff(rs.getString(1), rs.getString(2));
+			stuffList.add(stuff);
+		}
+		return stuffList;
+	}
+
+	//修改员工信息
+	public void updateAStuffbyNumber(String stuffNumber, String newName){
+		SQLDB sqldb = new SQLDB();
+		String sql = "update stuff_tb set stuff_name = ? where stuff_number = ?;";
+		Object[] obj = {newName, stuffNumber};
+		sqldb.update(sql, obj);
+	}
+
+	//删除员工信息
+	public void deleteAStuffbyNumber(String stuffNumber){
+		SQLDB sqldb = new SQLDB();
+		String sql = "delete from stuff_tb where stuff_number = ?;";
+		Object[] obj = {stuffNumber};
+		sqldb.update(sql, obj);
+	}
+
 	public static void main(String[] args) {
+
 		//测试srhAll();
 //		ApplicantDao appdao = new ApplicantDao();
 //		List<Applicant> all = appdao.srhAll(1);
 //		for (Applicant applicant : all) {
 //			System.out.println(applicant.getId());//返回数据表的id那一列的值
 //		}
-		
+
 		//测试srhAll_dingdan
 //		ApplicantDao appdao = new ApplicantDao();
 //		List<Applicant> all = appdao.srhAll_dingdan(1);
 //		for (Applicant applicant : all) {
 //			System.out.println(applicant.getGoods_name());//返回数据表的商品名称那一列的值
 //		}
-		
+
 		//测试delete,删除id为5的哪一条记录
 //		ApplicantDao appdao= new ApplicantDao();
 //		int a = appdao.delete(5);
 //		System.out.println(a);
-		
+
 		//测试getall返回所有数据的列数
 //		ApplicantDao appdao = new ApplicantDao();
 //		int a=appdao.getCount();
 //		System.out.println("appdao 总列数"+a);
-		
+
 		//测试getall_dingdan返回所有订单数据的列数
 //		ApplicantDao appdao = new ApplicantDao();
 //		int a=appdao.getCount_dingdan();
 //		System.out.println("appdao 总列数"+a);
-		
+
 		//以下为测试srhpass srhFirstname,srhaddr,srhpass代码，将返回密码，
 //		ApplicantDao appdao = new ApplicantDao();
 //		appdao.srhpass("admin");
@@ -374,7 +427,7 @@ public class ApplicantDao {
 //		System.out.println(appdao.srhLastname("admin"));
 //		获取addr
 //		System.out.println(appdao.srhaddr("admin"));
-		
+
 		//下述代码用于测试add方法，即注册界面
 //		ApplicantDao appdao = new ApplicantDao();
 //		Applicant a =new Applicant();
@@ -384,7 +437,7 @@ public class ApplicantDao {
 //		a.setZhanghao("yueyuedaniao");		
 //		a.setMima("1836");
 //		System.out.println(appdao.add(a));
-		
+
 		//以下代码用于测试repass方法，修改密码
 //		ApplicantDao appdao =new ApplicantDao();
 //		Applicant a= new Applicant();
@@ -396,12 +449,12 @@ public class ApplicantDao {
 //		ApplicantDao appdao = new ApplicantDao();
 //		Applicant a = appdao.srhByOne(1);
 //		System.out.println(a.getZhanghao());
-		
+
 		ApplicantDao appdao = new ApplicantDao();
 		List<Applicant> all = appdao.srhAll_dingdanall(5);
 		for (Applicant applicant : all) {
 			System.out.println(applicant.getGoods_name());//返回数据表的商品名称那一列的值
 		}
-		
+
 	}
 }
