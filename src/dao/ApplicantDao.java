@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import db.SQLDB;
 import entity.Applicant;
 import entity.Stuff;
+import entity.Vehicle;
 import service.ApplicantService;
 
 public class ApplicantDao {
@@ -111,6 +112,106 @@ public class ApplicantDao {
 		Object[] obj = { app.getGoods_name(), app.getGoods_number(), app.getGoods_baozhuang(), app.getGoods_weight(), app.getGoods_volume(),app.getFahuo_person(),app.getShouhuo_person(),app.getFahuo_date(),app.getFahuo_addr(),app.getShouhuo_addr(),app.getTuoyun_money(),app.getShonghuo_money(),app.getBaoxian_money(),app.getJiehuo_money(),app.getPay_money(),app.getPick(),app.getSingle()};
 		return db.update(sql, obj);
 	}
+
+	// 添加车辆信息
+	public int add_vehicle(Vehicle vehicle) {
+		SQLDB db = new SQLDB();
+		String sql = "insert into vehicle (location,"+"license_number,"+"type,"+"status"+") values(?,?,?,?)";
+		Object[] obj = { vehicle.getLocation(), vehicle.getLicense_number(), vehicle.getType(), vehicle.getStatus()};
+		return db.update(sql, obj);
+	}
+
+	// 修改车辆信息
+	public int update_vehicle(Vehicle vehicle) {
+		SQLDB db = new SQLDB();
+		String sql = "update vehicle set location=?, license_number=?, type=?, status=? where id = ?";
+		Object[] obj = {vehicle.getLocation(), vehicle.getLicense_number(), vehicle.getType(), vehicle.getStatus(), vehicle.getId()};
+		return db.update(sql, obj);
+	}
+
+	// 删除车辆信息
+	public int delete_vehicle(int id) {
+		SQLDB db = new SQLDB();
+		String sql = "delete from vehicle where id = ?";
+		Object[] obj = {id};
+		return db.update(sql, obj);
+	}
+
+	// 查询车辆信息
+	public List<Vehicle> get_vehicle(int pageNo) {
+
+		List<Vehicle> list = new LinkedList<Vehicle>();
+		// 调用SqlHelper对象，完成查询
+		SQLDB db = new SQLDB();
+		String sql = "select * from vehicle limit ?, 6;";
+		//查询所有信息，每一页存放6条
+		try {
+			ResultSet rs = db.search(sql, (pageNo - 1) * 6);
+			while (rs.next()) { // 判断所取得的结果集是否为空
+				// 将结果集的每一条数据保存为对象，添加到list里
+
+				int id = rs.getInt(1);
+				String location = rs.getString(2);
+				String license_number = rs.getString(3);
+				String type = rs.getString(4);
+				int status = rs.getInt(5);
+
+				// 将书库中的一个记录的所有字段赋值给t，把t加入集合
+				Vehicle vehicle = new Vehicle(id, location, license_number, type, status);
+				list.add(vehicle);
+			}
+			rs.close();
+			db.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("查询出错。");
+		}
+		return list;
+	}
+
+
+	public int get_all_vehicle_count() {
+		SQLDB db = new SQLDB();
+		String sql = "select count(*) from vehicle ;";
+		int result = db.getAll(sql);
+		db.close();
+		return result;
+	}
+
+
+	public List<Vehicle> get_all_vehicle() {
+
+		List<Vehicle> list = new LinkedList<Vehicle>();
+		// 调用SqlHelper对象，完成查询
+		SQLDB db = new SQLDB();
+		String sql = "select * from vehicle ;";
+		System.out.println("sql语句后，全部数据");
+		//查询所有信息，每一页存放4条
+		try {
+			ResultSet rs = db.search(sql);
+			while (rs.next()) { // 判断所取得的结果集是否为空
+				// 将结果集的每一条数据保存为对象，添加到list里
+
+				int id = rs.getInt(1);
+				String location = rs.getString(2);
+				String license_number = rs.getString(3);
+				String type = rs.getString(4);
+				int status = rs.getInt(5);
+
+				// 将书库中的一个记录的所有字段赋值给t，把t加入集合
+				Vehicle vehicle = new Vehicle(id, location, license_number, type, status);
+				list.add(vehicle);
+			}
+			rs.close();
+			db.close();
+		} catch (Exception e) {
+			System.out.println("查询出错。");
+		}
+		return list;
+	}
+
+
+
 
 
 	//修改密码

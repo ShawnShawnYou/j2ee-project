@@ -4,6 +4,7 @@ import java.util.List;
 
 import dao.ApplicantDao;
 import entity.Applicant;
+import entity.Vehicle;
 
 public class ApplicantService {
 
@@ -62,5 +63,20 @@ public class ApplicantService {
 	public List<Applicant> srhAll_dingdanall(int i) {
 		
 		return appDao.srhAll_dingdanall(i);
+	}
+
+	// 车辆管理
+	public int add_vehicle(Vehicle vehicle) {return appDao.add_vehicle(vehicle);}
+
+	public int update_vehicle(Vehicle vehicle) {return appDao.update_vehicle(vehicle);}
+
+	public int delete_vehicle(int id) {return appDao.delete_vehicle(id);}
+
+	public List<Vehicle> get_vehicle(int pageNo) {return appDao.get_vehicle(pageNo);}
+
+	public int get_all_vehicle_count() {return appDao.get_all_vehicle_count();}
+
+	public List<Vehicle> get_all_vehicle() {
+		return appDao.get_all_vehicle();
 	}
 }

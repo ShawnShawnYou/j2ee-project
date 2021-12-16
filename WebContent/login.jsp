@@ -73,7 +73,7 @@
                 </form>
             </div>
         </div>
-        <p class="pull-right" style=""><a href="http://www.portnine.com" target="blank">Theme by Portnine</a></p>
+        <p class="pull-right" style=""><a href="sign-up.jsp" target="blank">注册</a></p>
         <p><a href="reset-password.html">忘记密码?</a></p>
     </div>
 </div>
