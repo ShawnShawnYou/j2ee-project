@@ -6,12 +6,12 @@ import java.sql.*;
 //定义该类用于连接到数据库
 public class SQLDB {
 	private String driverName = "com.mysql.jdbc.Driver";
-	private String dbURL = "jdbc:mysql://localhost:3306/datadb?serverTimezone=UTC";
+	private String dbURL = "jdbc:mysql://localhost:3306/datadb?useSSL=false&characterEncoding=utf-8&serverTimezone=GMT&autoReconnect=true&failOverReadOnly=false";
 	private Connection dbConn = null;
 	public PreparedStatement stmt = null;
 	private ResultSet rs = null;
 	private String user = "root";
-	private String pass = "root";
+	private String pass = "Fhy00711";
 
 	public SQLDB() { // 构造方法调用数据库连接。一旦创建对象，数据库建立连接
 		 this.getConnection();
@@ -32,13 +32,12 @@ public class SQLDB {
 		SQLDB sq = new SQLDB();
 		sq.getConnection();
 		System.out.println("=====================");
-		
-		//
-		String sql="select count(*) from user_pass";
-		sq.getAll(sql);
-		
+
+//		String sql="select count(*) from user_pass";
+//		sq.getAll(sql);
+
 	}
-	
+
 
 	public void close() { // 做完后关闭数据库操作
 		try {
@@ -94,18 +93,18 @@ public class SQLDB {
 		System.out.println(result);
 		return result;
 	}
-	
+
 	// 增删改通用方法      insert delete update都是一个方法
 	public int update(String sql, Object... obj) {
 		int result = -1;
-		try {			
+		try {
 			stmt = dbConn.prepareStatement(sql);
 			if (obj != null) {
 				int len = obj.length;
 				for (int i = 0; i < len; i++) {
 					stmt.setObject(i + 1, obj[i]);
 				}
-			}	
+			}
 			result = stmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

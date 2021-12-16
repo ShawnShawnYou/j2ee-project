@@ -4,6 +4,7 @@ import java.util.List;
 
 import dao.ApplicantDao;
 import entity.Applicant;
+import entity.Stuff;
 import entity.Vehicle;
 
 public class ApplicantService {
@@ -14,9 +15,9 @@ public class ApplicantService {
 		appDao = new ApplicantDao();
 	}
 
-//	public Applicant srhByOne(int id) {
-//		return appDao.srhByOne(id);
-//	}
+	public Applicant srhByOne(int id) {
+		return appDao.srhByOne(id);
+	}
 	
 	public int  repass(Applicant app) {
 		return appDao.repass(app);
@@ -79,4 +80,17 @@ public class ApplicantService {
 	public List<Vehicle> get_all_vehicle() {
 		return appDao.get_all_vehicle();
 	}
+
+	//增加员工
+	public int add_stuff(Stuff stuff) {return appDao.addAStuff(stuff);}
+
+	public int update_stuff(Stuff stuff) {return appDao.updateAStuffbyNumber(stuff);}
+
+	public List<Stuff> get_all_stuff(){
+		return appDao.get_all_stuff();
+	}
+
+	public int get_all_stuff_count() {return appDao.get_all_stuff_count();}
+
+	public int delete_stuff(String stuff_number) {return appDao.deleteAStuffbyNumber(stuff_number);};
 }

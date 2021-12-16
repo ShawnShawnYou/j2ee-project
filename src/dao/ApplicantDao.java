@@ -121,7 +121,7 @@ public class ApplicantDao {
 		return db.update(sql, obj);
 	}
 
-	// 修改车辆信息
+//	 修改车辆信息
 	public int update_vehicle(Vehicle vehicle) {
 		SQLDB db = new SQLDB();
 		String sql = "update vehicle set location=?, license_number=?, type=?, status=? where id = ?";
@@ -129,7 +129,7 @@ public class ApplicantDao {
 		return db.update(sql, obj);
 	}
 
-	// 删除车辆信息
+//	 删除车辆信息
 	public int delete_vehicle(int id) {
 		SQLDB db = new SQLDB();
 		String sql = "delete from vehicle where id = ?";
@@ -137,7 +137,7 @@ public class ApplicantDao {
 		return db.update(sql, obj);
 	}
 
-	// 查询车辆信息
+//	 查询车辆信息
 	public List<Vehicle> get_vehicle(int pageNo) {
 
 		List<Vehicle> list = new LinkedList<Vehicle>();
@@ -436,15 +436,15 @@ public class ApplicantDao {
 	}
 
 	//添加员工
-	public void addAStuff(Stuff stuff){
-		//TO-DO: 需要沟通数据库中的员工表命
+	public int addAStuff(Stuff stuff){
+		//TO-DO: 需要沟通数据库中的员工表名
 		//Step 1: 建立连接
 		SQLDB sqldb = new SQLDB();
 		//Step 2: sql语句
 		String sql = "insert into stuff_tb values (?,?);";
 		//Step 3：sql语句执行
 		Object[] obj = {stuff.getStuffName(), stuff.getStuffNumber()};
-		sqldb.update(sql, obj);
+		return sqldb.update(sql, obj);
 	}
 
 	//查找员工
@@ -456,34 +456,54 @@ public class ApplicantDao {
 		return new Stuff(rs.getString(1), rs.getString(2));
 	}
 
-	//查找多个员工
-	public List<Stuff> listStuffs(String stuffNumber) throws SQLException {
-		List<Stuff> stuffList = new ArrayList<>();
-		SQLDB sqldb = new SQLDB();
-		String sql = "select * from stuff_tb where stuff_number like ?%;";
-		Object[] obj = {stuffNumber};
-		ResultSet rs = sqldb.search(sql, obj);
-		while(rs.next()){
-			Stuff stuff = new Stuff(rs.getString(1), rs.getString(2));
-			stuffList.add(stuff);
+	//查找所有员工
+	public List<Stuff> get_all_stuff() {
+		List<Stuff> list = new LinkedList<Stuff>();
+		// 调用SqlHelper对象，完成查询
+		SQLDB db = new SQLDB();
+		String sql = "select * from stuff_tb ;";
+		System.out.println("sql语句后，全部数据");
+		//查询所有信息，每一页存放4条
+		try {
+			ResultSet rs = db.search(sql);
+			while (rs.next()) { // 判断所取得的结果集是否为空
+				// 将结果集的每一条数据保存为对象，添加到list里
+
+				// 将书库中的一个记录的所有字段赋值给t，把t加入集合
+				Stuff stuff = new Stuff(rs.getString(1), rs.getString(2));
+				list.add(stuff);
+			}
+			rs.close();
+			db.close();
+		} catch (Exception e) {
+			System.out.println("查询出错。");
 		}
-		return stuffList;
+		return list;
 	}
 
+
 	//修改员工信息
-	public void updateAStuffbyNumber(String stuffNumber, String newName){
+	public int updateAStuffbyNumber(Stuff stuff){
 		SQLDB sqldb = new SQLDB();
 		String sql = "update stuff_tb set stuff_name = ? where stuff_number = ?;";
-		Object[] obj = {newName, stuffNumber};
-		sqldb.update(sql, obj);
+		Object[] obj = {stuff.getStuffName(), stuff.getStuffNumber()};
+		return sqldb.update(sql, obj);
 	}
 
 	//删除员工信息
-	public void deleteAStuffbyNumber(String stuffNumber){
+	public int deleteAStuffbyNumber(String stuff_number){
 		SQLDB sqldb = new SQLDB();
 		String sql = "delete from stuff_tb where stuff_number = ?;";
-		Object[] obj = {stuffNumber};
-		sqldb.update(sql, obj);
+		Object[] obj = {stuff_number};
+		return sqldb.update(sql, obj);
+	}
+
+	public int get_all_stuff_count() {
+		SQLDB db = new SQLDB();
+		String sql = "select count(*) from stuff ;";
+		int result = db.getAll(sql);
+		db.close();
+		return result;
 	}
 
 	public static void main(String[] args) {
@@ -535,7 +555,7 @@ public class ApplicantDao {
 //		a.setFirstname("111");
 //		a.setLastname("222");
 //		a.setAddr("cs");
-//		a.setZhanghao("yueyuedaniao");		
+//		a.setZhanghao("yueyuedaniao");
 //		a.setMima("1836");
 //		System.out.println(appdao.add(a));
 
@@ -545,7 +565,7 @@ public class ApplicantDao {
 //		a.setMima("183602");
 //		a.setZhanghao("yueyueniao");
 //		System.out.println("repass : "+ appdao.repass(a));
-//	
+//
 		//测试srhbyone，将会输出id为1的那一列数据的账号（账户）
 //		ApplicantDao appdao = new ApplicantDao();
 //		Applicant a = appdao.srhByOne(1);

@@ -118,7 +118,7 @@
                 <div class="stat-widget">
                     <div class="stat-button">
                         <p class="title"> ${all_user} </p>
-                        <p class="detail">总账户数</p>
+                        <p class="detail">总员工数</p>
                     </div>
                 </div>
 
@@ -194,7 +194,8 @@
            
         </div>
     </div>
-</div>             
+</div>
+
                     <footer>
                         <hr>
                         <!-- Purchase a site license to remove this link from the footer: http://www.portnine.com/bootstrap-themes -->
