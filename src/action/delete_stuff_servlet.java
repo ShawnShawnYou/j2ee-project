@@ -52,7 +52,7 @@ public class delete_stuff_servlet extends HttpServlet {
 		} else {
 			try {
 				PrintWriter out = response.getWriter();
-//				out.println("<script>alert('删除失败！');</script>");
+				out.println("<script>alert('删除失败！');</script>");
 				out.println("<script>window.location.href=" +
 						"\"http://localhost:8080/Logistics-system/all_vehicle_servlet?pageNo=" + pageNo + "\";" +
 						"</script>");

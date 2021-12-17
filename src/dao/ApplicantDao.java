@@ -23,7 +23,7 @@ public class ApplicantDao {
 
 	public String srhpass(String user) { // 使用该方法查询密码，从传入账号，再返回再数据库中的密码。
 		SQLDB db = new SQLDB();
-		String sql = "select pass from user_pass where user_name =?";
+		String sql = "select pass from user_pass where usernumber =?";
 		String password1 = null;
 		try {
 			ResultSet rs1 = db.search(sql, user);
