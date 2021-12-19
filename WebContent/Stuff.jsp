@@ -82,10 +82,10 @@
     <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>管理员权限</a>
     <ul id="dashboard-menu" class="nav nav-list collapse in">
         <li><a href="http://localhost:8080/Logistics_system/Stuff.jsp">主页</a></li>
-        <li ><a href="http://localhost:8080/Logistics-system/allservlet">账户表</a></li>
+        <li ><a href="http://localhost:8080/Logistics_system/allservlet">账户表</a></li>
         <li ><a href="user.jsp">修改密码</a></li>
-        <li><a href="http://localhost:8080/Logistics-system/allgoods_servlet">订单操作</a></li>
-        <li><a href="http://localhost:8080/Logistics-system/lookdingdanservlet">订单统计</a></li>
+        <li><a href="http://localhost:8080/Logistics_system/allgoods_servlet">订单操作</a></li>
+        <li><a href="http://localhost:8080/Logistics_system/lookdingdanservlet">订单统计</a></li>
         <li><a href="http://localhost:8080/Logistics_system/stuff_manage.jsp">员工管理</a></li>
     </ul>
 
@@ -149,7 +149,7 @@
                 </tr>
                 <tr id="stuff-items">
                     <td>001</td>
-                    <td>FHy</td>
+                    <td>Fxy</td>
                 </tr>
             </table>
         </div>

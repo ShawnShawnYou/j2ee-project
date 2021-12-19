@@ -89,11 +89,11 @@
 		<a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i
 			class="icon-dashboard"></i>仪表板</a>
 		<ul id="dashboard-menu" class="nav nav-list collapse in">
-			<li><a href="http://localhost:8080/Logistics-system/indexservlet">主页</a></li>
-			<li><a href="http://localhost:8080/Logistics-system/allservlet">用户表</a></li>
+			<li><a href="http://localhost:8080/Logistics_system/indexservlet">主页</a></li>
+			<li><a href="http://localhost:8080/Logistics_system/allservlet">用户表</a></li>
 			<li><a href="user.jsp">修改密码</a></li>
-			<li><a href="http://localhost:8080/Logistics-system/allgoods_servlet">订单操作</a></li>
-			<li><a href="http://localhost:8080/Logistics-system/lookdingdanservlet">订单统计</a></li>
+			<li><a href="http://localhost:8080/Logistics_system/allgoods_servlet">订单操作</a></li>
+			<li><a href="http://localhost:8080/Logistics_system/lookdingdanservlet">订单统计</a></li>
 
 		</ul>
 
@@ -134,6 +134,8 @@
 									class="icon-plus"></i> 添加订单</a>
 								<!-- 	<button class="btn btn-info" onclick="srhorder()">查询订单</button>
    			<button class="btn btn-info">批量生成当页订单</button> -->
+								<a href="fahuo.jsp" class="btn btn-primary">我的发货订单</a>
+								<a href="shouhuo.jsp" class="btn btn-primary">我的收货订单</a>
 							</div>
 							<div class="btn-group" id="srh-btn" style="display: none;">
 								<form class="search form-inline">
