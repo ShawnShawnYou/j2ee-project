@@ -179,7 +179,7 @@
         document.getElementById('#stuff-items');
         await $('#search-btn').click(()=>{
             $.ajax({
-                url: "http://localhost:8080/Logistics-system/stuffServlet",
+                url: "http://localhost:8080/Logistics-system/StuffServlet",
                 dataType: "json"
             }).done( res => {
                 console.log(res);

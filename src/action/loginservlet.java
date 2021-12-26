@@ -18,13 +18,13 @@ import db.SQLDB;
 import entity.Applicant;
 import service.ApplicantService;
 
-//¸Ã½çÃæÊÊÓÃÓÚÔÚµÇÂ¼½çÃæµÄÕËºÅÃÜÂëµÈÅĞ¶Ï
+//ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶ï¿½
 @WebServlet("/loginservlet")
 public class loginservlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// ¶ÔµÇÂ¼½çÃæµÄÕËºÅÃÜÂë½øĞĞÑéÖ¤£¬ÑéÖ¤³É¹¦ºóÌø×ªµ½Ö÷½çÃæindex.jsp
+		// ï¿½Ôµï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½index.jsp
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
@@ -33,49 +33,49 @@ public class loginservlet extends HttpServlet {
 		String use = request.getParameter("username");
 		String password = request.getParameter("password");
 		ApplicantDao appdao = new ApplicantDao();
-		String db_pass = appdao.srhpass(use); // ´ÓÊı¾İ¿âÖĞ»ñÈ¡µÄÃÜÂë£¬±£´æÔÙdb_passÖĞ
+		String db_pass = appdao.srhpass(use); // ï¿½ï¿½ï¿½ï¿½ï¿½İ¿ï¿½ï¿½Ğ»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½db_passï¿½ï¿½
 //		System.out.println(use);
-		// »ñÈ¡Ãû
+		// ï¿½ï¿½È¡ï¿½ï¿½
 //		String db_fristname = appdao.srhFirstname(use);
 //		System.out.println(db_fristname);
-//		// »ñÈ¡ĞÕ
+//		// ï¿½ï¿½È¡ï¿½ï¿½
 //		String db_lastname = appdao.srhLastname(use);
 //		System.out.println(db_lastname);
-//		// »ñÈ¡µØÖ·
+//		// ï¿½ï¿½È¡ï¿½ï¿½Ö·
 //		String db_addr = appdao.srhaddr(use);
 //		System.out.println(db_addr);
-//		// Ê¹ÓÃgetsession±£´æÊı¾İÈ·±£Êı¾İµÄÉúÃüÖÜÆÚ²»»áÌ«¶ÌÒÔÃâÊı¾İ¶ªÊ§
+//		// Ê¹ï¿½ï¿½getsessionï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½İµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½Ì«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ¶ï¿½Ê§
 //		request.getSession().setAttribute("LFname", (db_fristname + " " + db_lastname));
-		// ½«¸ÃÖµ°ó¶¨
+		// ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½
 //		request.getSession().setAttribute("db_fristname", db_fristname);
 //		request.getSession().setAttribute("db_lastname", db_lastname);
 //		request.getSession().setAttribute("db_addr", db_addr);
 //		request.getSession().setAttribute("use", use);
 //		request.getSession().setAttribute("db_pass", db_pass);
 
-//´Ë´¦ĞèÒª×¢ÒâµÄÊÇÔÚÊ¹ÓÃ±íµ¥Ìá½»Êı¾İ¹ıÀ´µÄÊÇStringµÄÊı¾İÀàĞÍ£¬ÔÚ½øĞĞequalsÅĞ¶ÏÊ±int¶ÔÏóºÍString¶ÔÏóÊ±²»»áÏàµÈµÄ£¬¼´Ê¹ÊÇ¿´ÆğÀ´ÖµÊÇÏàµÈ
+//ï¿½Ë´ï¿½ï¿½ï¿½Òª×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã±ï¿½ï¿½á½»ï¿½ï¿½ï¿½İ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Stringï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½Ú½ï¿½ï¿½ï¿½equalsï¿½Ğ¶ï¿½Ê±intï¿½ï¿½ï¿½ï¿½ï¿½Stringï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÈµÄ£ï¿½ï¿½ï¿½Ê¹ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½
 //		System.out.println(password);
 //		System.out.println(db_pass);
 		PrintWriter out = response.getWriter();
-		// ´«Èë½ÓÊÜÓÃ»§ÊäÈëµÄuserµÄÖµ£¬ÔÚÊı¾İ¿âÖĞÑ°ÕÒ£¬²¢ÇÒ·µ»ØÆäÃÜÂë¡£
-		if (password.equals(db_pass)) { // ÅĞ¶ÏÃÜÂëÊÇ·ñÕıÈ·
-			// µÇÂ¼³É¹¦ºóÌø×ªµ½Ö÷Ò³
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½userï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ¿ï¿½ï¿½ï¿½Ñ°ï¿½Ò£ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡£
+		if (password.equals(db_pass)) { // ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½È·
+			// ï¿½ï¿½Â¼ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ò³
 			if(use.equals("admin")){
-				out.println("<script type='text/javascript' >alert('µÇÂ½³É¹¦£¬¼´½«Ìø×ª!');</script>");
+				out.println("<script type='text/javascript' >alert('ï¿½ï¿½Â½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ª!');</script>");
 				out.println("<script>window.location='http://localhost:8080/Logistics-system/Stuff.jsp'</script>");
 
-				System.out.println("µÇÂ¼³É¹¦");
+				System.out.println("ï¿½ï¿½Â¼ï¿½É¹ï¿½");
 			}
 			else {
-				out.println("<script type='text/javascript' >alert('µÇÂ½³É¹¦£¬¼´½«Ìø×ª!');</script>");
+				out.println("<script type='text/javascript' >alert('ï¿½ï¿½Â½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ª!');</script>");
 				out.println("<script>window.location='http://localhost:8080/Logistics-system/index.jsp'</script>");
 
-				System.out.println("µÇÂ¼³É¹¦");
+				System.out.println("ï¿½ï¿½Â¼ï¿½É¹ï¿½");
 			}
-		} else { // µ±µÇÂ½ÊäÈëµÄÕËºÅÃÜÂë²»¶ÔÊ±£¬»¹ÊÇÌø×ªµ½µ±Ç°Ò³Ãæ£¬ÖØĞÂÊäÈëÊ¹ÓÃjs´úÂë½øĞĞÌáĞÑ
-			out.println("<script type='text/javascript' >alert('µÇÂ½Ê§°Ü£¬ÇëÖØĞÂµÇÂ½!');</script>");
+		} else { // ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ë²»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ç°Ò³ï¿½æ£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½jsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			out.println("<script type='text/javascript' >alert('ï¿½ï¿½Â½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½Â½!');</script>");
 			out.println("<script>window.location='login.jsp'</script>");
-			// Ê¹ÓÃjs´úÂëºó»òÕßËµÊ¹ÓÃÁËout.println½«²»ÔÙÖ´ĞĞÏÂÃæµÄÌø×ªÓï¾ä
+			// Ê¹ï¿½ï¿½jsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ËµÊ¹ï¿½ï¿½ï¿½ï¿½out.printlnï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½
 			// request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
 

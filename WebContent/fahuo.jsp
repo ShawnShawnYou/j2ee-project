@@ -131,6 +131,28 @@
 						</tr>
 						</thead>
 
+                        <thead>
+                        <tr>
+                            <th class="col-md-2">001</th>
+                            <th class="col-md-2">签字笔</th>
+                            <th class="col-md-2">admin</th>
+                            <th class="col-md-2">FXY</th>
+                            <th class="col-md-2">10</th>
+                            <th class="col-md-2">2021.12.01</th>
+                        </tr>
+                        </thead>
+
+                        <thead>
+                        <tr>
+                            <th class="col-md-2">002</th>
+                            <th class="col-md-2">作业本</th>
+                            <th class="col-md-2">admin</th>
+                            <th class="col-md-2">FHY</th>
+                            <th class="col-md-2">2</th>
+                            <th class="col-md-2">2021.12.01</th>
+                        </tr>
+                        </thead>
+
 						<c:forEach items="${list1}" var="li1">
 							<tr>
 								<td height="22" align="center" >${li1.td_id}</td>

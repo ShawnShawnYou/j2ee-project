@@ -94,6 +94,7 @@
 			<li><a href="user.jsp">修改密码</a></li>
 			<li><a href="http://localhost:8080/Logistics-system/admin_allgoods_servlet">订单操作</a></li>
 			<li><a href="http://localhost:8080/Logistics-system/lookdingdanservlet">订单统计</a></li>
+			<li><a href="http://localhost:8080/Logistics-system/stuff_manage">员工管理</a></li>
 			<li><a href="http://localhost:8080/Logistics-system/vehicle_servlet">车辆管理</a></li>
 		</ul>
 
@@ -152,14 +153,13 @@
 											<th class="col-md-2"></th>
 										</tr>
 									</thead>
-
 									<tbody>
 									<c:forEach items="${list1}" var="li1">
 										<tr>
-											<td height="22" align="center" >${li1.stuff_name}</td>
-											<td height="22" align="center"> ${li1.stuff_number} </td>
-											<td><input name="update_button" type="button" value="编辑" onclick="update_stuff(${li1.id})"/>
-												<input name="delete_button" type="button" value="删除" onclick="delete_stuff(${li1.id})"/></td>
+											<td height="22" align="center" >${li1.stuffName}</td>
+											<td height="22" align="center" >${li1.stuffNumber} </td>
+											<td><input name="update_button" type="button" value="编辑" onclick="update_stuff(${li1.stuffNumber})"/>
+												<input name="delete_button" type="button" value="删除" onclick="delete_stuff(${li1.stuffNumber})"/></td>
 										</tr>
 									</c:forEach>
 									
@@ -168,16 +168,16 @@
 							</div>
 							<div class="pagination">
 								<ul>
-									<li><a>&nbsp;&nbsp;共有  ${all1} 条记录，当前${now_page} / ${pages_dingdan}页</a></li>
-									<td width="150">
-										<div align="center" style="float: left; margin-left: 800px; margin-top: -40px;">
-											<span class="STYLE1">
-												转到第
-												<input name="pageSize" id="pageSize" type="text" value="${now_page}" size="4" style="height:12px; width:20px; border:1px solid #999999;" />
-												页  <input name="transfer" type="button" value="跳转" onclick="transfer()"/>
-											</span>
-										</div>
-									</td>
+									<li><a>&nbsp;&nbsp;共有  ${all1} 条记录</a></li>
+<%--									<td width="150">--%>
+<%--										<div align="center" style="float: left; margin-left: 800px; margin-top: -40px;">--%>
+<%--											<span class="STYLE1">--%>
+<%--												转到第--%>
+<%--												<input name="pageSize" id="pageSize" type="text" value="${now_page}" size="4" style="height:12px; width:20px; border:1px solid #999999;" />--%>
+<%--												页  <input name="transfer" type="button" value="跳转" onclick="transfer()"/>--%>
+<%--											</span>--%>
+<%--										</div>--%>
+<%--									</td>--%>
 								</ul>
 							</div>
 						</div>
@@ -195,6 +195,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 		<script src="lib/bootstrap/js/bootstrap.js"></script>
 		<script type="text/javascript">
         $("[rel=tooltip]").tooltip();

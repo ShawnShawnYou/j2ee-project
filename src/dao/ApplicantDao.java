@@ -21,7 +21,7 @@ import service.ApplicantService;
 
 public class ApplicantDao {
 
-	public String srhpass(String user) { // Ê¹ÓÃ¸Ã·½·¨²éÑ¯ÃÜÂë£¬´Ó´«ÈëÕËºÅ£¬ÔÙ·µ»ØÔÙÊý¾Ý¿âÖÐµÄÃÜÂë¡£
+	public String srhpass(String user) { // Ê¹ï¿½Ã¸Ã·ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ë£¬ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ËºÅ£ï¿½ï¿½Ù·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ë¡£
 		SQLDB db = new SQLDB();
 		String sql = "select pass from user_pass where user_name =?";
 		String password1 = null;
@@ -40,7 +40,7 @@ public class ApplicantDao {
 		return password1;
 	}
 
-	public String srhFirstname(String user) { // Ê¹ÓÃ¸Ã·½·¨²éÑ¯ÃÜÂë£¬´Ó´«ÈëÕËºÅ£¬ÔÙ·µ»ØÔÙÊý¾Ý¿âÖÐµÄÃû¡£
+	public String srhFirstname(String user) { // Ê¹ï¿½Ã¸Ã·ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ë£¬ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ËºÅ£ï¿½ï¿½Ù·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
 		SQLDB db = new SQLDB();
 		String sql = "select Firstname from user_pass where user_name =?";
 		String Firstname = null;
@@ -59,7 +59,7 @@ public class ApplicantDao {
 		return Firstname;
 	}
 
-	public String srhLastname(String user) { // Ê¹ÓÃ¸Ã·½·¨²éÑ¯ÃÜÂë£¬´Ó´«ÈëÕËºÅ£¬ÔÙ·µ»ØÔÙÊý¾Ý¿âÖÐµÄÐÕ¡£
+	public String srhLastname(String user) { // Ê¹ï¿½Ã¸Ã·ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ë£¬ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ËºÅ£ï¿½ï¿½Ù·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½Ðµï¿½ï¿½Õ¡ï¿½
 		SQLDB db = new SQLDB();
 		String sql = "select Lastname from user_pass where user_name =?";
 		String Lastname = null;
@@ -78,7 +78,7 @@ public class ApplicantDao {
 		return Lastname;
 	}
 
-	public String srhaddr(String user) { // Ê¹ÓÃ¸Ã·½·¨²éÑ¯ÃÜÂë£¬´Ó´«ÈëÕËºÅ£¬ÔÙ·µ»ØÔÙÊý¾Ý¿âÖÐµÄÐÕ¡£
+	public String srhaddr(String user) { // Ê¹ï¿½Ã¸Ã·ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ë£¬ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ËºÅ£ï¿½ï¿½Ù·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½Ðµï¿½ï¿½Õ¡ï¿½
 		SQLDB db = new SQLDB();
 		String sql = "select addr from user_pass where user_name =?";
 		String addr = null;
@@ -97,15 +97,15 @@ public class ApplicantDao {
 		return addr;
 	}
 
-	// Ìí¼Ó¸öÈËÓÃ»§ÐÅÏ¢
+	// ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ï¢
 	public int add(Applicant app) {
 		SQLDB db = new SQLDB();
 		String sql = "insert into user_pass (user_name,"+" pass,"+"Firstname,"+"Lastname,"+"addr"+")values(?,?,?,?,?)";
 		Object[] obj = { app.getZhanghao(), app.getMima(), app.getFirstname(), app.getLastname(), app.getAddr()};
-		//´òÓ¡²ÎÊý£¬ÅÐ¶ÏÊÇ·ñ¿ÉÒÔ»ñÈ¡Öµ£¬System.out.println(obj[0]);System.out.println(obj[1]);System.out.println(obj[2]);System.out.println(obj[3]);System.out.println(obj[4]);
+		//ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ô»ï¿½È¡Öµï¿½ï¿½System.out.println(obj[0]);System.out.println(obj[1]);System.out.println(obj[2]);System.out.println(obj[3]);System.out.println(obj[4]);
 		return db.update(sql, obj);
 	}
-	//Ìí¼Ó¶©µ¥ÐÅÏ¢
+	//ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	public int add_order(Applicant app) {
 		SQLDB db = new SQLDB();
 		String sql = "insert into t_dingdan (goods_name,"+"goods_number,"+"goods_baozhuang,"+"goods_weight,"+"goods_volume,"+"fahuo_person,"+"shouhuo_person,"+"fahuo_date,"+"fahuo_addr,"+"shouhuo_addr,"+"tuoyun_money,"+"shonghuo_money,"+"baoxian_money,"+"jiehuo_money,"+"pay_money,"+"pick,"+"single"+")values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -113,7 +113,7 @@ public class ApplicantDao {
 		return db.update(sql, obj);
 	}
 
-	//¸üÐÂ¶©µ¥ÐÅÏ¢
+	//ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	public int update_order(Applicant app) {
 		SQLDB db = new SQLDB();
 		String sql = "update t_dingdan set goods_name = ?,"+"goods_number = ?,"+"goods_baozhuang = ?,"+
@@ -124,7 +124,7 @@ public class ApplicantDao {
 		return db.update(sql, obj);
 	}
 
-	//	 É¾³ý¶©µ¥ÐÅÏ¢
+	//	 É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	public int delete_dingdan(int id) {
 		SQLDB db = new SQLDB();
 		String sql = "delete from t_dingdan where td_id = ?";
@@ -132,7 +132,7 @@ public class ApplicantDao {
 		return db.update(sql, obj);
 	}
 
-	// Ìí¼Ó³µÁ¾ÐÅÏ¢
+	// ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	public int add_vehicle(Vehicle vehicle) {
 		SQLDB db = new SQLDB();
 		String sql = "insert into vehicle (location,"+"license_number,"+"type,"+"status"+") values(?,?,?,?)";
@@ -140,7 +140,7 @@ public class ApplicantDao {
 		return db.update(sql, obj);
 	}
 
-//	 ÐÞ¸Ä³µÁ¾ÐÅÏ¢
+//	 ï¿½Þ¸Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	public int update_vehicle(Vehicle vehicle) {
 		SQLDB db = new SQLDB();
 		String sql = "update vehicle set location=?, license_number=?, type=?, status=? where id = ?";
@@ -148,7 +148,7 @@ public class ApplicantDao {
 		return db.update(sql, obj);
 	}
 
-//	 É¾³ý³µÁ¾ÐÅÏ¢
+//	 É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	public int delete_vehicle(int id) {
 		SQLDB db = new SQLDB();
 		String sql = "delete from vehicle where id = ?";
@@ -156,18 +156,18 @@ public class ApplicantDao {
 		return db.update(sql, obj);
 	}
 
-//	 ²éÑ¯³µÁ¾ÐÅÏ¢
+//	 ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	public List<Vehicle> get_vehicle(int pageNo) {
 
 		List<Vehicle> list = new LinkedList<Vehicle>();
-		// µ÷ÓÃSqlHelper¶ÔÏó£¬Íê³É²éÑ¯
+		// ï¿½ï¿½ï¿½ï¿½SqlHelperï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½Ñ¯
 		SQLDB db = new SQLDB();
 		String sql = "select * from vehicle limit ?, 6;";
-		//²éÑ¯ËùÓÐÐÅÏ¢£¬Ã¿Ò»Ò³´æ·Å6Ìõ
+		//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ã¿Ò»Ò³ï¿½ï¿½ï¿½6ï¿½ï¿½
 		try {
 			ResultSet rs = db.search(sql, (pageNo - 1) * 6);
-			while (rs.next()) { // ÅÐ¶ÏËùÈ¡µÃµÄ½á¹û¼¯ÊÇ·ñÎª¿Õ
-				// ½«½á¹û¼¯µÄÃ¿Ò»ÌõÊý¾Ý±£´æÎª¶ÔÏó£¬Ìí¼Óµ½listÀï
+			while (rs.next()) { // ï¿½Ð¶ï¿½ï¿½ï¿½È¡ï¿½ÃµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½listï¿½ï¿½
 
 				int id = rs.getInt(1);
 				String location = rs.getString(2);
@@ -175,7 +175,7 @@ public class ApplicantDao {
 				String type = rs.getString(4);
 				int status = rs.getInt(5);
 
-				// ½«Êé¿âÖÐµÄÒ»¸ö¼ÇÂ¼µÄËùÓÐ×Ö¶Î¸³Öµ¸øt£¬°Ñt¼ÓÈë¼¯ºÏ
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶Î¸ï¿½Öµï¿½ï¿½tï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½ë¼¯ï¿½ï¿½
 				Vehicle vehicle = new Vehicle(id, location, license_number, type, status);
 				list.add(vehicle);
 			}
@@ -183,7 +183,7 @@ public class ApplicantDao {
 			db.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("²éÑ¯³ö´í¡£");
+			System.out.println("ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½");
 		}
 		return list;
 	}
@@ -201,15 +201,15 @@ public class ApplicantDao {
 	public List<Vehicle> get_all_vehicle() {
 
 		List<Vehicle> list = new LinkedList<Vehicle>();
-		// µ÷ÓÃSqlHelper¶ÔÏó£¬Íê³É²éÑ¯
+		// ï¿½ï¿½ï¿½ï¿½SqlHelperï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½Ñ¯
 		SQLDB db = new SQLDB();
 		String sql = "select * from vehicle ;";
-		System.out.println("sqlÓï¾äºó£¬È«²¿Êý¾Ý");
-		//²éÑ¯ËùÓÐÐÅÏ¢£¬Ã¿Ò»Ò³´æ·Å4Ìõ
+		System.out.println("sqlï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ã¿Ò»Ò³ï¿½ï¿½ï¿½4ï¿½ï¿½
 		try {
 			ResultSet rs = db.search(sql);
-			while (rs.next()) { // ÅÐ¶ÏËùÈ¡µÃµÄ½á¹û¼¯ÊÇ·ñÎª¿Õ
-				// ½«½á¹û¼¯µÄÃ¿Ò»ÌõÊý¾Ý±£´æÎª¶ÔÏó£¬Ìí¼Óµ½listÀï
+			while (rs.next()) { // ï¿½Ð¶ï¿½ï¿½ï¿½È¡ï¿½ÃµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½listï¿½ï¿½
 
 				int id = rs.getInt(1);
 				String location = rs.getString(2);
@@ -217,14 +217,14 @@ public class ApplicantDao {
 				String type = rs.getString(4);
 				int status = rs.getInt(5);
 
-				// ½«Êé¿âÖÐµÄÒ»¸ö¼ÇÂ¼µÄËùÓÐ×Ö¶Î¸³Öµ¸øt£¬°Ñt¼ÓÈë¼¯ºÏ
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶Î¸ï¿½Öµï¿½ï¿½tï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½ë¼¯ï¿½ï¿½
 				Vehicle vehicle = new Vehicle(id, location, license_number, type, status);
 				list.add(vehicle);
 			}
 			rs.close();
 			db.close();
 		} catch (Exception e) {
-			System.out.println("²éÑ¯³ö´í¡£");
+			System.out.println("ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½");
 		}
 		return list;
 	}
@@ -233,7 +233,7 @@ public class ApplicantDao {
 
 
 
-	//ÐÞ¸ÄÃÜÂë
+	//ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½
 	public int repass(Applicant app) {
 		SQLDB db = new SQLDB();
 		String sql = "update user_pass set pass=? where user_name = ?";
@@ -241,27 +241,27 @@ public class ApplicantDao {
 		return db.update(sql, obj);
 	}
 
-	//²éÑ¯ËùÓÐÊý¾Ý
+	//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public List<Applicant> srhAll(int pageNo) {
 
 		List<Applicant> list = new LinkedList<Applicant>();
-		// µ÷ÓÃSqlHelper¶ÔÏó£¬Íê³É²éÑ¯
+		// ï¿½ï¿½ï¿½ï¿½SqlHelperï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½Ñ¯
 		SQLDB db = new SQLDB();
 		String sql = "select * from user_pass limit ?,6;";
-		//²éÑ¯ËùÓÐÐÅÏ¢£¬Ã¿Ò»Ò³´æ·Å6Ìõ
+		//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ã¿Ò»Ò³ï¿½ï¿½ï¿½6ï¿½ï¿½
 		try {
 			ResultSet rs = db.search(sql, (pageNo - 1) * 6);
-			while (rs.next()) { // ÅÐ¶ÏËùÈ¡µÃµÄ½á¹û¼¯ÊÇ·ñÎª¿Õ
-				// ½«½á¹û¼¯µÄÃ¿Ò»ÌõÊý¾Ý±£´æÎª¶ÔÏó£¬Ìí¼Óµ½listÀï
+			while (rs.next()) { // ï¿½Ð¶ï¿½ï¿½ï¿½È¡ï¿½ÃµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½listï¿½ï¿½
 				Applicant t = new Applicant();
-				//int zh_id = rs.getInt(1); // ½«½á¹û¼¯ÖÐµÚÒ»¸ö¶ÔÏóµÄidÈ¡µ½
+				//int zh_id = rs.getInt(1); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idÈ¡ï¿½ï¿½
 				String zh_name = rs.getString(1);
 				String zh_pass = rs.getString(2);
 				String zh_firstname = rs.getString(3);
 				String zh_lastname = rs.getString(4);
 				String zh_addr = rs.getString(5);
 
-				// ½«Êé¿âÖÐµÄÒ»¸ö¼ÇÂ¼µÄËùÓÐ×Ö¶Î¸³Öµ¸øt£¬°Ñt¼ÓÈë¼¯ºÏ
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶Î¸ï¿½Öµï¿½ï¿½tï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½ë¼¯ï¿½ï¿½
 				t.setZhanghao(zh_name);
 				t.setAddr(zh_addr);
 				t.setFirstname(zh_firstname);
@@ -273,12 +273,12 @@ public class ApplicantDao {
 			db.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("²éÑ¯³ö´í¡£");
+			System.out.println("ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½");
 		}
 		return list;
 	}
 
-	//²éÑ¯ËùÓÐµÄÊý¾Ý¹²ÓÐµÄÁÐÊý
+	//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
 	public int getCount() {
 		SQLDB db = new SQLDB();
 		String sql = "select count(*) from user_pass ;";
@@ -295,7 +295,7 @@ public class ApplicantDao {
 		return result;
 	}
 
-	public int delete(String user_name) {		//¸ù¾Ýuser_name½øÐÐÉ¾³ý
+	public int delete(String user_name) {		//ï¿½ï¿½ï¿½ï¿½user_nameï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½
 		SQLDB db = new SQLDB();
 		String sql = "delete from user_pass where user_name =? ;";
 		Object[] obj = { user_name };
@@ -312,13 +312,13 @@ public class ApplicantDao {
 			ResultSet rs = db.search(sql, obj);
 			rs.next();
 			t = new Applicant();
-			int aid = rs.getInt(1); // ½«½á¹û¼¯ÖÐµÚÒ»¸ö¶ÔÏóµÄidÈ¡µ½
+			int aid = rs.getInt(1); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idÈ¡ï¿½ï¿½
 			String sone_zhanghao = rs.getString(2);
 			String sone_mima = rs.getString(3);
 			String sone_firstname = rs.getString(4);
 			String sone_lastname = rs.getString(5);
 			String sone_addr = rs.getString(6);
-			// ½«Êé¿âÖÐµÄÒ»¸ö¼ÇÂ¼µÄËùÓÐ×Ö¶Î¸³Öµ¸øt£¬°Ñt¼ÓÈë¼¯ºÏ
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶Î¸ï¿½Öµï¿½ï¿½tï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½ë¼¯ï¿½ï¿½
 			t.setId(aid);
 			t.setZhanghao(sone_zhanghao);
 			t.setMima(sone_mima);
@@ -327,7 +327,7 @@ public class ApplicantDao {
 			t.setAddr(sone_addr);
 			db.close();
 		} catch (Exception e) {
-			System.out.println("²éÑ¯³ö´í¡£");
+			System.out.println("ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½");
 		}
 		return t;
 	}
@@ -336,18 +336,18 @@ public class ApplicantDao {
 	public List<Applicant> srhAll_dingdan(int pageNo) {
 
 		List<Applicant> list = new LinkedList<Applicant>();
-		// µ÷ÓÃSqlHelper¶ÔÏó£¬Íê³É²éÑ¯
+		// ï¿½ï¿½ï¿½ï¿½SqlHelperï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½Ñ¯
 		SQLDB db = new SQLDB();
 		String sql = "select * from t_dingdan limit ?,4;";
-		System.out.println("sqlÓï¾äºó£¬·ÖÒ³²éÑ¯");
-		//²éÑ¯ËùÓÐÐÅÏ¢£¬Ã¿Ò»Ò³´æ·Å4Ìõ
+		System.out.println("sqlï¿½ï¿½ï¿½ó£¬·ï¿½Ò³ï¿½ï¿½Ñ¯");
+		//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ã¿Ò»Ò³ï¿½ï¿½ï¿½4ï¿½ï¿½
 		try {
 			ResultSet rs = db.search(sql, (pageNo - 1) * 4);
-			while (rs.next()) { // ÅÐ¶ÏËùÈ¡µÃµÄ½á¹û¼¯ÊÇ·ñÎª¿Õ
-				// ½«½á¹û¼¯µÄÃ¿Ò»ÌõÊý¾Ý±£´æÎª¶ÔÏó£¬Ìí¼Óµ½listÀï
+			while (rs.next()) { // ï¿½Ð¶ï¿½ï¿½ï¿½È¡ï¿½ÃµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½listï¿½ï¿½
 				Applicant tding = new Applicant();
 				int td_id=rs.getInt(1);
-				String goods_name = rs.getString(2); // ½«½á¹û¼¯ÖÐµÚÒ»¸ö¶ÔÏóµÄidÈ¡µ½
+				String goods_name = rs.getString(2); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idÈ¡ï¿½ï¿½
 				String goods_number = rs.getString(3);
 				String goods_baozhuang = rs.getString(4);
 				String goods_weight = rs.getString(5);
@@ -364,7 +364,7 @@ public class ApplicantDao {
 				String pay_money=rs.getString(16);
 				String pick=rs.getString(17);
 				String single= rs.getString(18);
-				// ½«Êé¿âÖÐµÄÒ»¸ö¼ÇÂ¼µÄËùÓÐ×Ö¶Î¸³Öµ¸øtding£¬°Ñtding¼ÓÈë¼¯ºÏ
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶Î¸ï¿½Öµï¿½ï¿½tdingï¿½ï¿½ï¿½ï¿½tdingï¿½ï¿½ï¿½ë¼¯ï¿½ï¿½
 				tding.setTd_id(td_id);
 				tding.setGoods_name(goods_name);
 				tding.setGoods_number(goods_number);
@@ -388,7 +388,7 @@ public class ApplicantDao {
 			rs.close();
 			db.close();
 		} catch (Exception e) {
-			System.out.println("²éÑ¯³ö´í¡£");
+			System.out.println("ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½");
 		}
 		return list;
 	}
@@ -397,18 +397,18 @@ public class ApplicantDao {
 	public List<Applicant> srhAll_dingdanall(int i) {
 
 		List<Applicant> list = new LinkedList<Applicant>();
-		// µ÷ÓÃSqlHelper¶ÔÏó£¬Íê³É²éÑ¯
+		// ï¿½ï¿½ï¿½ï¿½SqlHelperï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½Ñ¯
 		SQLDB db = new SQLDB();
 		String sql = "select * from t_dingdan ;";
-		System.out.println("sqlÓï¾äºó£¬È«²¿Êý¾Ý");
-		//²éÑ¯ËùÓÐÐÅÏ¢£¬Ã¿Ò»Ò³´æ·Å4Ìõ
+		System.out.println("sqlï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ã¿Ò»Ò³ï¿½ï¿½ï¿½4ï¿½ï¿½
 		try {
 			ResultSet rs = db.search(sql);
-			while (rs.next()) { // ÅÐ¶ÏËùÈ¡µÃµÄ½á¹û¼¯ÊÇ·ñÎª¿Õ
-				// ½«½á¹û¼¯µÄÃ¿Ò»ÌõÊý¾Ý±£´æÎª¶ÔÏó£¬Ìí¼Óµ½listÀï
+			while (rs.next()) { // ï¿½Ð¶ï¿½ï¿½ï¿½È¡ï¿½ÃµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½listï¿½ï¿½
 				Applicant tding = new Applicant();
 				int td_id=rs.getInt(1);
-				String goods_name = rs.getString(2); // ½«½á¹û¼¯ÖÐµÚÒ»¸ö¶ÔÏóµÄidÈ¡µ½
+				String goods_name = rs.getString(2); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idÈ¡ï¿½ï¿½
 				String goods_number = rs.getString(3);
 				String goods_baozhuang = rs.getString(4);
 				String goods_weight = rs.getString(5);
@@ -425,7 +425,7 @@ public class ApplicantDao {
 				String pay_money=rs.getString(16);
 				String pick=rs.getString(17);
 				String single= rs.getString(18);
-				// ½«Êé¿âÖÐµÄÒ»¸ö¼ÇÂ¼µÄËùÓÐ×Ö¶Î¸³Öµ¸øtding£¬°Ñtding¼ÓÈë¼¯ºÏ
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶Î¸ï¿½Öµï¿½ï¿½tdingï¿½ï¿½ï¿½ï¿½tdingï¿½ï¿½ï¿½ë¼¯ï¿½ï¿½
 				tding.setTd_id(td_id);
 				tding.setGoods_name(goods_name);
 				tding.setGoods_number(goods_number);
@@ -449,24 +449,24 @@ public class ApplicantDao {
 			rs.close();
 			db.close();
 		} catch (Exception e) {
-			System.out.println("²éÑ¯³ö´í¡£");
+			System.out.println("ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½");
 		}
 		return list;
 	}
 
-	//Ìí¼ÓÔ±¹¤
+	//ï¿½ï¿½ï¿½Ô±ï¿½ï¿½
 	public int addAStuff(Stuff stuff){
-		//TO-DO: ÐèÒª¹µÍ¨Êý¾Ý¿âÖÐµÄÔ±¹¤±íÃû
-		//Step 1: ½¨Á¢Á¬½Ó
+		//TO-DO: ï¿½ï¿½Òªï¿½ï¿½Í¨ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½Ðµï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//Step 1: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		SQLDB sqldb = new SQLDB();
-		//Step 2: sqlÓï¾ä
+		//Step 2: sqlï¿½ï¿½ï¿½
 		String sql = "insert into stuff_tb values (?,?);";
-		//Step 3£ºsqlÓï¾äÖ´ÐÐ
+		//Step 3ï¿½ï¿½sqlï¿½ï¿½ï¿½Ö´ï¿½ï¿½
 		Object[] obj = {stuff.getStuffName(), stuff.getStuffNumber()};
 		return sqldb.update(sql, obj);
 	}
 
-	//²éÕÒÔ±¹¤
+	//ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½
 	public Stuff getAStuffbyNumber(String stuffNumber) throws SQLException {
 		SQLDB sqldb = new SQLDB();
 		String sql = "select * from stuff_tb where stuff_number = ?;";
@@ -475,33 +475,33 @@ public class ApplicantDao {
 		return new Stuff(rs.getString(1), rs.getString(2));
 	}
 
-	//²éÕÒËùÓÐÔ±¹¤
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½
 	public List<Stuff> get_all_stuff() {
 		List<Stuff> list = new LinkedList<Stuff>();
-		// µ÷ÓÃSqlHelper¶ÔÏó£¬Íê³É²éÑ¯
+		// ï¿½ï¿½ï¿½ï¿½SqlHelperï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É²ï¿½Ñ¯
 		SQLDB db = new SQLDB();
 		String sql = "select * from stuff_tb ;";
-		System.out.println("sqlÓï¾äºó£¬È«²¿Êý¾Ý");
-		//²éÑ¯ËùÓÐÐÅÏ¢£¬Ã¿Ò»Ò³´æ·Å4Ìõ
+		System.out.println("sqlï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ã¿Ò»Ò³ï¿½ï¿½ï¿½4ï¿½ï¿½
 		try {
 			ResultSet rs = db.search(sql);
-			while (rs.next()) { // ÅÐ¶ÏËùÈ¡µÃµÄ½á¹û¼¯ÊÇ·ñÎª¿Õ
-				// ½«½á¹û¼¯µÄÃ¿Ò»ÌõÊý¾Ý±£´æÎª¶ÔÏó£¬Ìí¼Óµ½listÀï
+			while (rs.next()) { // ï¿½Ð¶ï¿½ï¿½ï¿½È¡ï¿½ÃµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½listï¿½ï¿½
 
-				// ½«Êé¿âÖÐµÄÒ»¸ö¼ÇÂ¼µÄËùÓÐ×Ö¶Î¸³Öµ¸øt£¬°Ñt¼ÓÈë¼¯ºÏ
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ò»ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶Î¸ï¿½Öµï¿½ï¿½tï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½ë¼¯ï¿½ï¿½
 				Stuff stuff = new Stuff(rs.getString(1), rs.getString(2));
 				list.add(stuff);
 			}
 			rs.close();
 			db.close();
 		} catch (Exception e) {
-			System.out.println("²éÑ¯³ö´í¡£");
+			System.out.println("ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½");
 		}
 		return list;
 	}
 
 
-	//ÐÞ¸ÄÔ±¹¤ÐÅÏ¢
+	//ï¿½Þ¸ï¿½Ô±ï¿½ï¿½ï¿½ï¿½Ï¢
 	public int updateAStuffbyNumber(Stuff stuff){
 		SQLDB sqldb = new SQLDB();
 		String sql = "update stuff_tb set stuff_name = ? where stuff_number = ?;";
@@ -509,7 +509,7 @@ public class ApplicantDao {
 		return sqldb.update(sql, obj);
 	}
 
-	//É¾³ýÔ±¹¤ÐÅÏ¢
+	//É¾ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½Ï¢
 	public int deleteAStuffbyNumber(String stuff_number){
 		SQLDB sqldb = new SQLDB();
 		String sql = "delete from stuff_tb where stuff_number = ?;";
@@ -519,7 +519,7 @@ public class ApplicantDao {
 
 	public int get_all_stuff_count() {
 		SQLDB db = new SQLDB();
-		String sql = "select count(*) from stuff ;";
+		String sql = "select count(*) from stuff_tb ;";
 		int result = db.getAll(sql);
 		db.close();
 		return result;
@@ -527,48 +527,48 @@ public class ApplicantDao {
 
 	public static void main(String[] args) {
 
-		//²âÊÔsrhAll();
+		//ï¿½ï¿½ï¿½ï¿½srhAll();
 //		ApplicantDao appdao = new ApplicantDao();
 //		List<Applicant> all = appdao.srhAll(1);
 //		for (Applicant applicant : all) {
-//			System.out.println(applicant.getId());//·µ»ØÊý¾Ý±íµÄidÄÇÒ»ÁÐµÄÖµ
+//			System.out.println(applicant.getId());//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½idï¿½ï¿½Ò»ï¿½Ðµï¿½Öµ
 //		}
 
-		//²âÊÔsrhAll_dingdan
+		//ï¿½ï¿½ï¿½ï¿½srhAll_dingdan
 //		ApplicantDao appdao = new ApplicantDao();
 //		List<Applicant> all = appdao.srhAll_dingdan(1);
 //		for (Applicant applicant : all) {
-//			System.out.println(applicant.getGoods_name());//·µ»ØÊý¾Ý±íµÄÉÌÆ·Ãû³ÆÄÇÒ»ÁÐµÄÖµ
+//			System.out.println(applicant.getGoods_name());//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ðµï¿½Öµ
 //		}
 
-		//²âÊÔdelete,É¾³ýidÎª5µÄÄÄÒ»Ìõ¼ÇÂ¼
+		//ï¿½ï¿½ï¿½ï¿½delete,É¾ï¿½ï¿½idÎª5ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Â¼
 //		ApplicantDao appdao= new ApplicantDao();
 //		int a = appdao.delete(5);
 //		System.out.println(a);
 
-		//²âÊÔgetall·µ»ØËùÓÐÊý¾ÝµÄÁÐÊý
+		//ï¿½ï¿½ï¿½ï¿½getallï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½
 //		ApplicantDao appdao = new ApplicantDao();
 //		int a=appdao.getCount();
-//		System.out.println("appdao ×ÜÁÐÊý"+a);
+//		System.out.println("appdao ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+a);
 
-		//²âÊÔgetall_dingdan·µ»ØËùÓÐ¶©µ¥Êý¾ÝµÄÁÐÊý
+		//ï¿½ï¿½ï¿½ï¿½getall_dingdanï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½
 //		ApplicantDao appdao = new ApplicantDao();
 //		int a=appdao.getCount_dingdan();
-//		System.out.println("appdao ×ÜÁÐÊý"+a);
+//		System.out.println("appdao ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+a);
 
-		//ÒÔÏÂÎª²âÊÔsrhpass srhFirstname,srhaddr,srhpass´úÂë£¬½«·µ»ØÃÜÂë£¬
+		//ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½srhpass srhFirstname,srhaddr,srhpassï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¬
 //		ApplicantDao appdao = new ApplicantDao();
 //		appdao.srhpass("admin");
-//		»ñÈ¡ÃÜÂë
+//		ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
 //		System.out.println(appdao.srhpass("admin"));
-//		 »ñÈ¡Firstname
+//		 ï¿½ï¿½È¡Firstname
 //		 System.out.println(appdao.srhFirstname("admin"));
-//		 »ñÈ¡Lastname
+//		 ï¿½ï¿½È¡Lastname
 //		System.out.println(appdao.srhLastname("admin"));
-//		»ñÈ¡addr
+//		ï¿½ï¿½È¡addr
 //		System.out.println(appdao.srhaddr("admin"));
 
-		//ÏÂÊö´úÂëÓÃÓÚ²âÊÔadd·½·¨£¬¼´×¢²á½çÃæ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½addï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½
 //		ApplicantDao appdao = new ApplicantDao();
 //		Applicant a =new Applicant();
 //		a.setFirstname("111");
@@ -578,14 +578,14 @@ public class ApplicantDao {
 //		a.setMima("1836");
 //		System.out.println(appdao.add(a));
 
-		//ÒÔÏÂ´úÂëÓÃÓÚ²âÊÔrepass·½·¨£¬ÐÞ¸ÄÃÜÂë
+		//ï¿½ï¿½ï¿½Â´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½repassï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½
 //		ApplicantDao appdao =new ApplicantDao();
 //		Applicant a= new Applicant();
 //		a.setMima("183602");
 //		a.setZhanghao("yueyueniao");
 //		System.out.println("repass : "+ appdao.repass(a));
 //
-		//²âÊÔsrhbyone£¬½«»áÊä³öidÎª1µÄÄÇÒ»ÁÐÊý¾ÝµÄÕËºÅ£¨ÕË»§£©
+		//ï¿½ï¿½ï¿½ï¿½srhbyoneï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idÎª1ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ËºÅ£ï¿½ï¿½Ë»ï¿½ï¿½ï¿½
 //		ApplicantDao appdao = new ApplicantDao();
 //		Applicant a = appdao.srhByOne(1);
 //		System.out.println(a.getZhanghao());
@@ -593,7 +593,7 @@ public class ApplicantDao {
 		ApplicantDao appdao = new ApplicantDao();
 		List<Applicant> all = appdao.srhAll_dingdanall(5);
 		for (Applicant applicant : all) {
-			System.out.println(applicant.getGoods_name());//·µ»ØÊý¾Ý±íµÄÉÌÆ·Ãû³ÆÄÇÒ»ÁÐµÄÖµ
+			System.out.println(applicant.getGoods_name());//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ðµï¿½Öµ
 		}
 
 	}

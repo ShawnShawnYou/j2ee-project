@@ -1,6 +1,7 @@
 package action;
 
 import entity.Stuff;
+import entity.Vehicle;
 import service.ApplicantService;
 
 import javax.servlet.ServletException;
@@ -44,7 +45,7 @@ public class update_stuff_servlet extends HttpServlet {
         if (result > 0) {
             try {
                 PrintWriter out = response.getWriter();
-                out.println("<script type='text/javascript' >alert('¸üÐÂ³É¹¦£¡');</script>");
+                out.println("<script type='text/javascript' >alert('ï¿½ï¿½ï¿½Â³É¹ï¿½ï¿½ï¿½');</script>");
                 out.println("<script>window.location.href=" +
                         "\"http://localhost:8080/Logistics-system/all_stuff_servlet?pageNo=" + 1 + "\";" +
                         "</script>");
@@ -54,7 +55,7 @@ public class update_stuff_servlet extends HttpServlet {
         } else {
             try {
                 PrintWriter out = response.getWriter();
-                out.println("<script>alert('¸üÐÂÊ§°Ü£¡');</script>");
+                out.println("<script>alert('ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½');</script>");
                 out.println("<script>window.location.href=" +
                         "\"http://localhost:8080/Logistics-system/all_stuff_servlet?pageNo=" + 1 + "\";" +
                         "</script>");

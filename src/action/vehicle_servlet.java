@@ -14,7 +14,7 @@ import java.util.List;
 
 @WebServlet("/vehicle_servlet")
 public class vehicle_servlet extends HttpServlet {
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ApplicantService applicantService = new ApplicantService();
 
@@ -35,7 +35,7 @@ public class vehicle_servlet extends HttpServlet {
 		request.getRequestDispatcher("vehicle_manage.jsp").forward(request, response);
 	}
 
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

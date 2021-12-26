@@ -2,6 +2,7 @@ package action;
 
 import entity.Applicant;
 import entity.Stuff;
+import entity.Vehicle;
 import service.ApplicantService;
 
 import javax.servlet.ServletException;
@@ -14,6 +15,7 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @WebServlet("/add_stuff_servlet")
 public class add_stuff_servlet extends HttpServlet {
@@ -38,7 +40,7 @@ public class add_stuff_servlet extends HttpServlet {
 		String stuff_number = request.getParameter("stuff_number");
 		//int status = (status_str.equals("")) ? 0 : Integer.parseInt(status_str);
 
-		stuff_name = (stuff_name != null) ? stuff_number : "";
+		stuff_name = (stuff_name != null) ? stuff_name : "";
 		stuff_number = (stuff_number != null) ? stuff_number : "";
 
 		Stuff stuff = new Stuff(stuff_name, stuff_number);
@@ -50,15 +52,16 @@ public class add_stuff_servlet extends HttpServlet {
 		if (result > 0) {
 			try {
 				PrintWriter out = response.getWriter();
-				out.println("<script type='text/javascript' >alert('Ìí¼Ó³É¹¦£¡');</script>");
+				out.println("<script type='text/javascript' >alert('æ·»åŠ æˆåŠŸï¼');</script>");
 				out.println("<script>window.location='stuff_manage.jsp'</script>");
+				out.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		} else {
 			try {
 				PrintWriter out = response.getWriter();
-				out.println("<script>alert('Ìí¼ÓÊ§°Ü£¡');</script>");
+				out.println("<script>alert('æ·»åŠ å¤±è´¥');</script>");
 				out.println("<script>window.location='add_stuff.jsp'</script>");
 				out.close();
 			} catch (IOException e) {

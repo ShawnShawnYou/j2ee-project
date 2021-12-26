@@ -1,6 +1,7 @@
 package action;
 
 import entity.Stuff;
+import entity.Vehicle;
 import service.ApplicantService;
 
 import javax.servlet.ServletException;
