@@ -221,7 +221,7 @@
     	}
 		function update_vehicle(vehicle_id) {
 			var pageSize = document.getElementById("pageSize" ).value;
-			window.location.href = "http://localhost:8080/Logistics-system/update_dingdan.jsp?vehicle_id="
+			window.location.href = "http://localhost:8080/Logistics-system/admin_update_dingdan.jsp?vehicle_id="
 					+ vehicle_id + "&pageNo=" + pageSize;
 		}
 

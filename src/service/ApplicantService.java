@@ -40,6 +40,10 @@ public class ApplicantService {
 		return appDao.add_order(app);
 	}
 
+	public int update_order(Applicant app) {
+		return appDao.update_order(app);
+	}
+
 	public List<Applicant> srhAll(int pageNo) {
 		return appDao.srhAll(pageNo);
 	}

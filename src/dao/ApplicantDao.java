@@ -113,6 +113,17 @@ public class ApplicantDao {
 		return db.update(sql, obj);
 	}
 
+	//更新订单信息
+	public int update_order(Applicant app) {
+		SQLDB db = new SQLDB();
+		String sql = "update t_dingdan set goods_name = ?,"+"goods_number = ?,"+"goods_baozhuang = ?,"+
+				"goods_weight = ?,"+"goods_volume = ?,"+"fahuo_person = ?,"+"shouhuo_person = ?,"+"fahuo_date = ?,"+
+				"fahuo_addr = ?,"+"shouhuo_addr = ?,"+"tuoyun_money = ?,"+"shonghuo_money = ?,"+"baoxian_money = ?,"+
+				"jiehuo_money = ?,"+"pay_money = ?,"+"pick = ?,"+"single = ?"+" where td_id = ?";
+		Object[] obj = { app.getGoods_name(), app.getGoods_number(), app.getGoods_baozhuang(), app.getGoods_weight(), app.getGoods_volume(),app.getFahuo_person(),app.getShouhuo_person(),app.getFahuo_date(),app.getFahuo_addr(),app.getShouhuo_addr(),app.getTuoyun_money(),app.getShonghuo_money(),app.getBaoxian_money(),app.getJiehuo_money(),app.getPay_money(),app.getPick(),app.getSingle(),app.getTd_id()};
+		return db.update(sql, obj);
+	}
+
 	//	 删除订单信息
 	public int delete_dingdan(int id) {
 		SQLDB db = new SQLDB();
