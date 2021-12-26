@@ -2,9 +2,11 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/action/add_vehicle_servlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/action/admin_allgoods_servlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/all_vehicle_servlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/allgoods_servlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/allservlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/action/delete_dingdan_servlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/delete_vehicle_servlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/deleteservlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/loginservlet.java" charset="GBK" />

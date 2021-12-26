@@ -66,6 +66,8 @@ public class ApplicantService {
 		return appDao.srhAll_dingdanall(i);
 	}
 
+	public int delete_dingdan(int id) {return appDao.delete_dingdan(id);}
+
 	// 车辆管理
 	public int add_vehicle(Vehicle vehicle) {return appDao.add_vehicle(vehicle);}
 

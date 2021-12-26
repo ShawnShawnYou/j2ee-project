@@ -62,13 +62,13 @@ public class loginservlet extends HttpServlet {
 			// 登录成功后跳转到主页
 			if(use.equals("admin")){
 				out.println("<script type='text/javascript' >alert('登陆成功，即将跳转!');</script>");
-				out.println("<script>window.location='http://localhost:8080/Logistics_system/Stuff.jsp'</script>");
+				out.println("<script>window.location='http://localhost:8080/Logistics-system/Stuff.jsp'</script>");
 
 				System.out.println("登录成功");
 			}
 			else {
 				out.println("<script type='text/javascript' >alert('登陆成功，即将跳转!');</script>");
-				out.println("<script>window.location='http://localhost:8080/Logistics_system/index.jsp'</script>");
+				out.println("<script>window.location='http://localhost:8080/Logistics-system/index.jsp'</script>");
 
 				System.out.println("登录成功");
 			}

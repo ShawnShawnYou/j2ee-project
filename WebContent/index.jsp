@@ -72,12 +72,12 @@
 
         <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>仪表板</a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
-            <li><a href="http://localhost:8080/Logistics_system/indexservlet">主页</a></li>
-            <li ><a href="http://localhost:8080/Logistics_system/allservlet">账户表</a></li>
+            <li><a href="http://localhost:8080/Logistics-system/indexservlet">主页</a></li>
+            <li ><a href="http://localhost:8080/Logistics-system/allservlet">账户表</a></li>
             <li ><a href="user.jsp">修改密码</a></li>
-            <li><a href="http://localhost:8080/Logistics_system/allgoods_servlet">订单操作</a></li>
-            <li><a href="http://localhost:8080/Logistics_system/lookdingdanservlet">订单统计</a></li>
-            <li><a href="http://localhost:8080/Logistics_system/vehicle_servlet">车辆管理</a></li>
+            <li><a href="http://localhost:8080/Logistics-system/allgoods_servlet">订单操作</a></li>
+            <li><a href="http://localhost:8080/Logistics-system/lookdingdanservlet">订单统计</a></li>
+            <li><a href="http://localhost:8080/Logistics-system/vehicle_servlet">车辆管理</a></li>
         </ul>
 
         <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>账户</a>

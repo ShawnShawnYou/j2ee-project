@@ -61,7 +61,7 @@
           
           <!--使用表单提交后，在Loginservlet中可获取输入的值，
           	在使用表单提交的时候要运用隐藏技术，不然在登录后的网址上会有账号密码输出，不安全  -->
-                <form method="get" action="http://localhost:8080/Logistics_system/loginservlet" >
+                <form method="get" action="http://localhost:8080/Logistics-system/loginservlet" >
                    <label>Username</label>
                     <input type="text" class="span12" name="username" >
                     <label>Password</label>
