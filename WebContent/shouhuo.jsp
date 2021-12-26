@@ -83,11 +83,11 @@
 
         <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>仪表板</a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
-			<li><a href="http://localhost:8080/Logistics-system/Stuff.jsp">主页</a></li>
+            <li><a href="http://localhost:8080/Logistics-system/indexservlet">主页</a></li>
             <li ><a href="http://localhost:8080/Logistics-system/allservlet">用户表</a></li>
             <li ><a href="user.jsp">修改密码</a></li>
-          	<li><a href="dingdan.jsp">订单操作</a></li>
-			<li><a href="http://localhost:8080/Logistics-system/stuff_manage.jsp">员工管理</a></li>
+          <li><a href="dingdan.jsp">订单操作</a></li>
+          <li><a href="lookdingdan.jsp">订单统计</a></li>
             
         </ul>
 
@@ -105,77 +105,61 @@
     
     	<div class="header">
     
-    		<h1 class="page-title">修改员工信息</h1>
+    		<h1 class="page-title">我的收货订单</h1>
     	</div>
 
-		<%
-			String stuff_number = request.getParameter("stuff_number");
-			String pageNo = request.getParameter("pageNo");
-		%>
+
+
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<form method="get" action="http://localhost:8080/Logistics-system/submitservlet">
+					<div class="btn-toolbar" style="margin-left: 25px;">
+						<div class="btn-group"></div>
+					</div>
+
+					<div class="well">
+						<table class="table">
+							<thead>
+							<tr>
+								<th class="col-md-2">单号</th>
+								<th class="col-md-2">商品名称</th>
+								<th class="col-md-2">发货人</th>
+								<th class="col-md-2">收货人</th>
+								<th class="col-md-2">拖运费</th>
+								<th class="col-md-2">发货时间</th>
+
+							</tr>
+							</thead>
+
+							<c:forEach items="${list1}" var="li1">
+								<tr>
+									<td height="22" align="center" >${li1.td_id}</td>
+									<td height="22" align="center"> ${li1.goods_name} </td>
+									<td height="22" align="center"> ${li1.fahuo_person} </td>
+									<td height="22" align="center"> ${li1.shouhuo_person} </td>
+									<td height="22" align="center">${li1.tuoyun_money}</td>
+									<td height="22" align="center">${li1.fahuo_date}</td>
+								</tr>
+							</c:forEach>
+
+							</tbody>
+						</table>
+					</div>
+
+				</form>
+			</div>
+			<footer>
+				<hr>
+				<p class="pull-right">
+					<a href="#" target="_blank">物流管理</a>
+				</p>
+
+				<p>
+					&copy; 2020 <a href="#" target="_blank">物流管理</a>
+				</p>
+			</footer>
+		</div>
     
-    	<div class="container-fluid">
-    		<div class="row-fluid">
-    		<form method="get" action="http://localhost:8080/Logistics-system/update_stuff_servlet">
-    			<div class="btn-toolbar" style="margin-left: 25px;">    
-    				<a href="update_stuff.jsp?stuff_number=<%=stuff_number%>" class="btn">重置</a>
-    				<div class="btn-group"></div>
-    			</div>
-    			<div class="block span11">
-    				<div class="block-heading">
-    					<a href="#widget2container" data-toggle="collapse">员工基本信息</a>
-    				</div>
-    				<div id="widget2container" class="block-body collapse in">
-    					<table class="table list">
-    						<tbody id="prolist">
-    							<tr>
-									<th>
-										<p>员工姓名</p>
-									</th>
-    								<th>
-    									<p>员工号</p>
-    								</th>
-    							</tr>
-    							<tr>
-
-<%--									<td>--%>
-<%--										<p>--%>
-<%--											<input type="hidden" value=<%=pageNo%> class="input-small" name="vehicle_id">--%>
-<%--										</p>--%>
-<%--									</td>--%>
-									<td>
-										<p>
-											<input type="text" value=<%=stuff_number%> class="input-small" name="stuff_number">
-										</p>
-									</td>
-    								<td>
-    									<p>
-    										<input type="text" placeholder="FXY" class="input-small" name="stuff_name">
-    									</p>
-    								</td>
-    							</tr>
-    						</tbody>
-    					</table>
-    					
-    				</div>
-    			</div>
-				<input type="submit" class="btn btn-primary pull-right" id="update_stuff" value="更新" >
-			</form>
-
-    		</div>
-
-
-    		<footer>
-    			<hr>
-    			<p class="pull-right">
-    				<a href="#" target="_blank">员工管理</a>
-    			</p>
-
-    			<p>
-    				&copy; 2020 <a href="#" target="_blank">员工管理</a>
-    			</p>
-    		</footer>
-    	</div>
-
     </div>
 
     <script src="lib/bootstrap/js/bootstrap.js"></script>
@@ -185,20 +169,6 @@
             $('.demo-cancel-click').click(function(){return false;});
         });
     </script>
-
-	<script>
-		$(function(){
-			$("#update_vehicle").on("click",function(){
-				jump1();
-			});
-
-			return false;
-		});
-		function jump1(){
-			window.location.href = "http://localhost:8080/Logistics-system/stuff_servlet";
-		}
-	</script>
-
-
-		</body>
+    
+  </body>
 </html>

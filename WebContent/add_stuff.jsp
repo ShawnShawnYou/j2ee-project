@@ -83,10 +83,10 @@
 
         <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>仪表板</a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
-            <li><a href="http://localhost:8080/Logistics_system/Stuff.jsp">主页</a></li>
-            <li ><a href="http://localhost:8080/Logistics_system/allservlet">用户表</a></li>
+            <li><a href="http://localhost:8080/Logistics-system/Stuff.jsp">主页</a></li>
+            <li ><a href="http://localhost:8080/Logistics-system/allservlet">用户表</a></li>
             <li ><a href="user.jsp">修改密码</a></li>
-			<li><a href="http://localhost:8080/Logistics_system/stuff_manage.jsp">员工管理</a></li>
+			<li><a href="http://localhost:8080/Logistics-system/stuff_manage.jsp">员工管理</a></li>
             
         </ul>
 
@@ -111,9 +111,9 @@
     
     	<div class="container-fluid">
     		<div class="row-fluid">
-    		<form method="get" action="http://localhost:8080/Logistics-system/add_vehicle_servlet">
+    		<form method="get" action="http://localhost:8080/Logistics-system/add_stuff_servlet">
     			<div class="btn-toolbar" style="margin-left: 25px;">    
-    				<a href="add_vehicle.jsp" class="btn">重置</a>
+    				<a href="add_stuff.jsp" class="btn">重置</a>
     				<div class="btn-group"></div>
     			</div>
     			<div class="block span11">
@@ -181,7 +181,7 @@
 
 	<script>
 		$(function(){
-			$("#add_vehicle").on("click",function(){
+			$("#add_stuff").on("click",function(){
 				jump1();
 			});
 
