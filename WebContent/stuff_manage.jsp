@@ -92,9 +92,8 @@
 			<li><a href="http://localhost:8080/Logistics-system/Stuff.jsp">主页</a></li>
 			<li><a href="http://localhost:8080/Logistics-system/allservlet">用户表</a></li>
 			<li><a href="user.jsp">修改密码</a></li>
-			<li><a href="http://localhost:8080/Logistics-system/allgoods_servlet">订单操作</a></li>
+			<li><a href="http://localhost:8080/Logistics-system/admin_allgoods_servlet">订单操作</a></li>
 			<li><a href="http://localhost:8080/Logistics-system/lookdingdanservlet">订单统计</a></li>
-
 			<li><a href="http://localhost:8080/Logistics-system/vehicle_servlet">车辆管理</a></li>
 		</ul>
 
@@ -159,8 +158,8 @@
 										<tr>
 											<td height="22" align="center" >${li1.stuff_name}</td>
 											<td height="22" align="center"> ${li1.stuff_number} </td>
-											<td><input name="update_button" type="button" value="编辑" onclick="update_vehicle(${li1.id})"/>
-												<input name="delete_button" type="button" value="删除" onclick="delete_vehicle(${li1.id})"/></td>
+											<td><input name="update_button" type="button" value="编辑" onclick="update_stuff(${li1.id})"/>
+												<input name="delete_button" type="button" value="删除" onclick="delete_stuff(${li1.id})"/></td>
 										</tr>
 									</c:forEach>
 									
@@ -209,16 +208,16 @@
     		   window.location.href="http://localhost:8080/Logistics-system/StuffServlet?pageNo=" + pageSize;
     	}
 
-		function update_vehicle(stuff_number) {
+		function update_stuff(stuff_number) {
 			var pageSize = document.getElementById("pageSize" ).value;
 			window.location.href = "http://localhost:8080/Logistics-system/update_stuff.jsp?stuff_number="
 					+ stuff_number + "&pageNo=" + pageSize;
 		}
 
-		function delete_vehicle(stuff_number) {
+		function delete_stuff(stuff_number) {
 			var pageSize = document.getElementById("pageSize" ).value;
 			window.location.href = "http://localhost:8080/Logistics-system/delete_stuff_servlet?stuff_number="
-					+ vehicle_id + "&pageNo=" + pageSize;
+					+ stuff_number + "&pageNo=" + pageSize;
 			// $('#table1 tbody').find("tr").eq(tr_id).hide();
 		}
 

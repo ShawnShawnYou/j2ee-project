@@ -94,6 +94,7 @@
 			<li><a href="user.jsp">修改密码</a></li>
 			<li><a href="http://localhost:8080/Logistics-system/allgoods_servlet">订单操作</a></li>
 			<li><a href="http://localhost:8080/Logistics-system/lookdingdanservlet">订单统计</a></li>
+			<li><a href="http://localhost:8080/Logistics-system/StuffServlet">员工管理</a></li>
 			<li><a href="http://localhost:8080/Logistics-system/vehicle_servlet">车辆管理</a></li>
 
 		</ul>
