@@ -11,7 +11,7 @@
     <meta name="author" content="">
 
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
-    
+
     <link rel="stylesheet" type="text/css" href="stylesheets/theme.css">
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
 
@@ -47,9 +47,9 @@
   </head>
 
 
-  <body class=""> 
+  <body class="">
 
-    
+
     <div class="navbar">
         <div class="navbar-inner">
                 <ul class="nav pull-right">
@@ -62,20 +62,20 @@
                         <ul class="dropdown-menu">
                             <li><a tabindex="-1" href="#">我的账户</a></li>
                             <li class="divider"></li>
-                          
+
                             <li class="divider visible-phone"></li>
                             <li><a tabindex="-1" href="login.jsp">退出</a></li>
                         </ul>
                     </li>
-                    
+
                 </ul>
                 <a class="brand" href="http://localhost:8080/Logistics-system/indexservlet"><span class="first">moonlight</span> <span class="second">物流</span></a>
         </div>
     </div>
-    
 
 
-    
+
+
     <div class="sidebar-nav">
         <form class="search form-inline">
             <input type="text" placeholder="Search...">
@@ -89,32 +89,32 @@
           <li><a href="http://localhost:8080/Logistics-system/admin_allgoods_servlet">订单操作</a></li>
           <li><a href="lookdingdan.jsp">订单统计</a> <span class="divider">/</span></li>
 			<li><a href="http://localhost:8080/Logistics-system/vehicle_servlet">车辆管理</a></li>
-            
+
         </ul>
 
         <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>账户</a>
         <ul id="accounts-menu" class="nav nav-list collapse">
             <li ><a href="sign-in.html">重新登陆</a></li>
             <li ><a href="sign-up.html">注册</a></li>
-           
-        </ul>       
-    </div>
-    
 
-    
+        </ul>
+    </div>
+
+
+
     <div class="content">
-    
+
     	<div class="header">
-    
+
     		<h1 class="page-title">添加车辆</h1>
     	</div>
-    
-    	
-    
+
+
+
     	<div class="container-fluid">
     		<div class="row-fluid">
     		<form method="get" action="http://localhost:8080/Logistics-system/add_vehicle_servlet">
-    			<div class="btn-toolbar" style="margin-left: 25px;">    
+    			<div class="btn-toolbar" style="margin-left: 25px;">
     				<a href="add_vehicle.jsp" class="btn">重置</a>
     				<div class="btn-group"></div>
     			</div>
@@ -138,7 +138,7 @@
     								<th>
     									<p>车辆状态</p>
     								</th>
-    								
+
     							</tr>
     							<tr>
     								<td>
@@ -164,11 +164,11 @@
 											<input type="number" placeholder="0" class="input-small" name="status">
 										</p>
 									</td>
-    								
+
     							</tr>
     						</tbody>
     					</table>
-    					
+
     				</div>
     			</div>
 

@@ -1,7 +1,6 @@
 package action;
 
 import entity.Stuff;
-import entity.Vehicle;
 import service.ApplicantService;
 
 import javax.servlet.ServletException;
@@ -45,7 +44,7 @@ public class delete_stuff_servlet extends HttpServlet {
 				PrintWriter out = response.getWriter();
 //				out.println("<script type='text/javascript' >alert('删除成功！');</script>");
 				out.println("<script>window.location.href=" +
-						"\"http://localhost:8080/Logistics-system/all_stuff_servlet?pageNo=" + pageNo + "\";" +
+						"\"http://localhost:8080/Logistics-system/all_stuff_servlet" + "\";" +
 						"</script>");
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -55,7 +54,7 @@ public class delete_stuff_servlet extends HttpServlet {
 				PrintWriter out = response.getWriter();
 				out.println("<script>alert('删除失败！');</script>");
 				out.println("<script>window.location.href=" +
-						"\"http://localhost:8080/Logistics-system/all_vehicle_servlet?pageNo=" + pageNo + "\";" +
+						"\"http://localhost:8080/Logistics-system/all_stuff_servlet" + "\";" +
 						"</script>");
 				out.close();
 			} catch (IOException e) {

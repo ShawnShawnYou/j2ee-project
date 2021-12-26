@@ -111,7 +111,7 @@
 
 		<%
 			String stuff_number = request.getParameter("stuff_number");
-			String pageNo = request.getParameter("pageNo");
+			String stuff_name = request.getParameter("stuff_name");
 		%>
     
     	<div class="container-fluid">
@@ -145,12 +145,12 @@
 <%--									</td>--%>
 									<td>
 										<p>
-											<input type="text" value=<%=stuff_number%> class="input-small" name="stuff_number">
+											<input type="text" value=<%=stuff_name%> class="input-small" name="stuff_name">
 										</p>
 									</td>
     								<td>
     									<p>
-    										<input type="text" placeholder="FXY" class="input-small" name="stuff_name">
+    										<input type="text" value=<%=stuff_number%> class="input-small" name="stuff_number">
     									</p>
     								</td>
     							</tr>
@@ -196,7 +196,7 @@
 			return false;
 		});
 		function jump1(){
-			window.location.href = "http://localhost:8080/Logistics-system/stuff_servlet";
+			window.location.href = "http://localhost:8080/Logistics-system/StuffServlet";
 		}
 	</script>
 

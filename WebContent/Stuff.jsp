@@ -127,7 +127,7 @@
                             <div class="stat-widget">
                                 <div class="stat-button">
                                     <p class="title"> ${all_user} </p>
-                                    <p class="detail">总员工数</p>
+                                    <p class="detail">总用户数</p>
                                 </div>
                             </div>
 
