@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>员工管理</title>
+<title>物流管理</title>
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
@@ -89,13 +89,13 @@
 		<a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i
 			class="icon-dashboard"></i>仪表板</a>
 		<ul id="dashboard-menu" class="nav nav-list collapse in">
-			<li><a href="http://localhost:8080/Logistics-system/Stuff.jsp">主页</a></li>
+			<li><a href="http://localhost:8080/Logistics-system/indexservlet">主页</a></li>
 			<li><a href="http://localhost:8080/Logistics-system/allservlet">用户表</a></li>
 			<li><a href="user.jsp">修改密码</a></li>
 			<li><a href="http://localhost:8080/Logistics-system/allgoods_servlet">订单操作</a></li>
 			<li><a href="http://localhost:8080/Logistics-system/lookdingdanservlet">订单统计</a></li>
-
 			<li><a href="http://localhost:8080/Logistics-system/vehicle_servlet">车辆管理</a></li>
+
 		</ul>
 
 		<a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i
@@ -122,7 +122,7 @@
 
 					<div class="header">
 
-						<h1 class="page-title">员工管理</h1>
+						<h1 class="page-title">订单管理</h1>
 					</div>
 
 					
@@ -131,9 +131,12 @@
 						<div class="row-fluid">
 
 							<div class="btn-toolbar">
-								<a href="add_stuff.jsp" class="btn btn-primary"><i
-									class="icon-plus"></i> 添加员工</a>
-								<a href="update_stuff.jsp" class="btn btn-primary"> 更新员工</a>
+								<a href="adddingdan.jsp" class="btn btn-primary"><i
+									class="icon-plus"></i> 添加订单</a>
+								<!-- 	<button class="btn btn-info" onclick="srhorder()">查询订单</button>
+   			<button class="btn btn-info">批量生成当页订单</button> -->
+								<a href="fahuo.jsp" class="btn btn-primary">我的发货订单</a>
+								<a href="shouhuo.jsp" class="btn btn-primary">我的收货订单</a>
 							</div>
 							<div class="btn-group" id="srh-btn" style="display: none;">
 								<form class="search form-inline">
@@ -145,22 +148,29 @@
 								</form>
 							</div>
 							<div class="well">
-								<table class="table" id="table1">
+								<table class="table">
 									<thead>
 										<tr>
-											<th class="col-md-2">员工姓名</th>
-											<th class="col-md-2">员工号</th>
-											<th class="col-md-2"></th>
+											<th class="col-md-2">单号</th>
+											<th class="col-md-2">商品名称</th>
+											<th class="col-md-2">发货人</th>
+											<th class="col-md-2">收货人</th>
+											<th class="col-md-2">拖运费</th>
+											<th class="col-md-2">发货时间</th>
+											
 										</tr>
 									</thead>
 
-									<tbody>
 									<c:forEach items="${list1}" var="li1">
 										<tr>
-											<td height="22" align="center" >${li1.stuff_name}</td>
-											<td height="22" align="center"> ${li1.stuff_number} </td>
-											<td><input name="update_button" type="button" value="编辑" onclick="update_vehicle(${li1.id})"/>
-												<input name="delete_button" type="button" value="删除" onclick="delete_vehicle(${li1.id})"/></td>
+											<td height="22" align="center" >${li1.td_id}</td>
+											<td height="22" align="center"> ${li1.goods_name} </td>
+											<td height="22" align="center"> ${li1.fahuo_person} </td>
+											<td height="22" align="center"> ${li1.shouhuo_person} </td>
+											<td height="22" align="center">${li1.tuoyun_money}</td>
+											<td height="22" align="center">${li1.fahuo_date}</td>
+											<td><input name="update_button" type="button" value="编辑" onclick="update_vehicle(${li1.td_id})"/>
+												<input name="delete_button" type="button" value="删除" onclick="delete_vehicle(${li1.td_id})"/></td>
 										</tr>
 									</c:forEach>
 									
@@ -169,28 +179,29 @@
 							</div>
 							<div class="pagination">
 								<ul>
-									<li><a>&nbsp;&nbsp;共有  ${all1} 条记录，当前${now_page} / ${pages_dingdan}页</a></li>
-									<td width="150">
-										<div align="center" style="float: left; margin-left: 800px; margin-top: -40px;">
-											<span class="STYLE1">
-												转到第
-												<input name="pageSize" id="pageSize" type="text" value="${now_page}" size="4" style="height:12px; width:20px; border:1px solid #999999;" />
-												页  <input name="transfer" type="button" value="跳转" onclick="transfer()"/>
-											</span>
-										</div>
-									</td>
+									
+									<li><a>&nbsp;&nbsp;共有  ${all1} 条记录，/ 共 ${pages_dingdan}页</a></li>
+									<td width="150"><div align="center" style="float: left; margin-left: 800px; margin-top: -40px;"><span class="STYLE1">转到第
+         <input name="pageSize" id="pageSize" type="text" value="${param.pageNo}" size="4" style="height:12px; width:20px; border:1px solid #999999;" /> 
+                      页  <input name="transfer" type="button" value="跳转" onclick="transfer()"/></span></div></td> 
+									<!--  <li><a>转到第&nbsp;<input name="pageSize" value="1"
+											id="pageSize" type= "number" />&nbsp;页&nbsp;<span
+											class="btn btn-info" onclick="transfer()">go</span>
+									</a></li>-->
 								</ul>
 							</div>
 						</div>
 					</div>
 					<footer>
 						<hr>
-						<p class="pull-right">
-							<a href="#" target="_blank">员工管理</a>
-						</p>
 
+						<p class="pull-right">
+							A <a href="http://www.portnine.com/bootstrap-themes"
+								target="_blank">Free Bootstrap Theme</a> by <a
+								href="http://www.portnine.com" target="_blank">Portnine</a>
+						</p>
 						<p>
-							&copy; 2020 <a href="#" target="_blank">员工管理</a>
+							&copy; 2020 <a href="http://www.portnine.com" target="_blank">Portnine</a>
 						</p>
 					</footer>
 				</div>
@@ -202,27 +213,24 @@
         $(function() {
             $('.demo-cancel-click').click(function(){return false;});
         });
-
         function transfer() {
     		var pageSize = document.getElementById("pageSize" ).value;
     		if(pageSize!=null||pageSize!="")
-    		   window.location.href="http://localhost:8080/Logistics-system/StuffServlet?pageNo=" + pageSize;
+    		   window.location.href="http://localhost:8080/Logistics-system/allgoods_servlet?pageNo="+pageSize;
+    		alert("即将跳转")//可以获取到该值
     	}
-
-		function update_vehicle(stuff_number) {
+		function update_vehicle(vehicle_id) {
 			var pageSize = document.getElementById("pageSize" ).value;
-			window.location.href = "http://localhost:8080/Logistics-system/update_stuff.jsp?stuff_number="
-					+ stuff_number + "&pageNo=" + pageSize;
+			window.location.href = "http://localhost:8080/Logistics-system/admin_update_dingdan.jsp?vehicle_id="
+					+ vehicle_id + "&pageNo=" + pageSize;
 		}
 
-		function delete_vehicle(stuff_number) {
+		function delete_vehicle(vehicle_id) {
 			var pageSize = document.getElementById("pageSize" ).value;
-			window.location.href = "http://localhost:8080/Logistics-system/delete_stuff_servlet?stuff_number="
+			window.location.href = "http://localhost:8080/Logistics-system/delete_dingdan_servlet?vehicle_id="
 					+ vehicle_id + "&pageNo=" + pageSize;
 			// $('#table1 tbody').find("tr").eq(tr_id).hide();
 		}
-
-
     </script>
 </body>
 </html>

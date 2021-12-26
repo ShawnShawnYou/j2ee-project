@@ -11,7 +11,7 @@ public class SQLDB {
 	public PreparedStatement stmt = null;
 	private ResultSet rs = null;
 	private String user = "root";
-	private String pass = "Fhy00711";
+	private String pass = "root";
 
 	public SQLDB() { // 构造方法调用数据库连接。一旦创建对象，数据库建立连接
 		 this.getConnection();

@@ -1,23 +1,21 @@
 package action;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import entity.Applicant;
+import service.ApplicantService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-import dao.ApplicantDao;
-import entity.Applicant;
-import service.ApplicantService;
-
-@WebServlet("/submitservlet")
-public class submitservlet extends HttpServlet {
+@WebServlet("/update_dingdan_servlet")
+public class update_dingdan_servlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
@@ -35,7 +33,7 @@ public class submitservlet extends HttpServlet {
 
 	public void add(HttpServletRequest request, HttpServletResponse response)   {
 
-
+		int td_id = Integer.parseInt(request.getParameter("td_id"));
 		String goods_name = request.getParameter("goods_name"); 
 		String goods_number = request.getParameter("goods_number");
 		String goods_baozhuang = request.getParameter("goods_baozhuang");
@@ -97,23 +95,24 @@ public class submitservlet extends HttpServlet {
 		tding.setPay_money(pay_money);
 		tding.setPick(pick);
 		tding.setSingle(single);
+		tding.setTd_id(td_id);
 		
 		ApplicantService appService = new ApplicantService();
-		int result = appService.add_order(tding);
+		int result = appService.update_order(tding);
 		System.out.println(result);
 		if (result > 0) {
 			try {
 				PrintWriter out = response.getWriter();	
-				out.println("<script type='text/javascript' >alert('添加成功！');</script>"); 
-				out.println("<script>window.location='http://localhost:8080/Logistics-system/indexservlet'</script>");
+				out.println("<script type='text/javascript' >alert('更新成功！');</script>");
+				out.println("<script>window.location='http://localhost:8080/Logistics-system/admin_allgoods_servlet'</script>");
 			} catch (IOException e) {				
 				e.printStackTrace();
 			}
 		} else {
 			try {
 				PrintWriter out = response.getWriter();
-				out.println("<script>alert('添加失败！');</script>");
-				out.println("<script>window.location='adddingdan.jsp'</script>");
+				out.println("<script>alert('更新失败！');</script>");
+				out.println("<script>window.location='admin_update_dingdan.jsp?td_id=" + td_id  + "</script>");
 				out.close();
 			} catch (IOException e) {				
 				e.printStackTrace();

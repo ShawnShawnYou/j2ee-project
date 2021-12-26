@@ -23,7 +23,7 @@ public class ApplicantDao {
 
 	public String srhpass(String user) { // 使用该方法查询密码，从传入账号，再返回再数据库中的密码。
 		SQLDB db = new SQLDB();
-		String sql = "select pass from user_pass where usernumber =?";
+		String sql = "select pass from user_pass where user_name =?";
 		String password1 = null;
 		try {
 			ResultSet rs1 = db.search(sql, user);
@@ -110,6 +110,25 @@ public class ApplicantDao {
 		SQLDB db = new SQLDB();
 		String sql = "insert into t_dingdan (goods_name,"+"goods_number,"+"goods_baozhuang,"+"goods_weight,"+"goods_volume,"+"fahuo_person,"+"shouhuo_person,"+"fahuo_date,"+"fahuo_addr,"+"shouhuo_addr,"+"tuoyun_money,"+"shonghuo_money,"+"baoxian_money,"+"jiehuo_money,"+"pay_money,"+"pick,"+"single"+")values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		Object[] obj = { app.getGoods_name(), app.getGoods_number(), app.getGoods_baozhuang(), app.getGoods_weight(), app.getGoods_volume(),app.getFahuo_person(),app.getShouhuo_person(),app.getFahuo_date(),app.getFahuo_addr(),app.getShouhuo_addr(),app.getTuoyun_money(),app.getShonghuo_money(),app.getBaoxian_money(),app.getJiehuo_money(),app.getPay_money(),app.getPick(),app.getSingle()};
+		return db.update(sql, obj);
+	}
+
+	//更新订单信息
+	public int update_order(Applicant app) {
+		SQLDB db = new SQLDB();
+		String sql = "update t_dingdan set goods_name = ?,"+"goods_number = ?,"+"goods_baozhuang = ?,"+
+				"goods_weight = ?,"+"goods_volume = ?,"+"fahuo_person = ?,"+"shouhuo_person = ?,"+"fahuo_date = ?,"+
+				"fahuo_addr = ?,"+"shouhuo_addr = ?,"+"tuoyun_money = ?,"+"shonghuo_money = ?,"+"baoxian_money = ?,"+
+				"jiehuo_money = ?,"+"pay_money = ?,"+"pick = ?,"+"single = ?"+" where td_id = ?";
+		Object[] obj = { app.getGoods_name(), app.getGoods_number(), app.getGoods_baozhuang(), app.getGoods_weight(), app.getGoods_volume(),app.getFahuo_person(),app.getShouhuo_person(),app.getFahuo_date(),app.getFahuo_addr(),app.getShouhuo_addr(),app.getTuoyun_money(),app.getShonghuo_money(),app.getBaoxian_money(),app.getJiehuo_money(),app.getPay_money(),app.getPick(),app.getSingle(),app.getTd_id()};
+		return db.update(sql, obj);
+	}
+
+	//	 删除订单信息
+	public int delete_dingdan(int id) {
+		SQLDB db = new SQLDB();
+		String sql = "delete from t_dingdan where td_id = ?";
+		Object[] obj = {id};
 		return db.update(sql, obj);
 	}
 

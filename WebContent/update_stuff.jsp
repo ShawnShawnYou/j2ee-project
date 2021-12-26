@@ -88,6 +88,7 @@
             <li ><a href="user.jsp">修改密码</a></li>
           	<li><a href="dingdan.jsp">订单操作</a></li>
 			<li><a href="http://localhost:8080/Logistics-system/stuff_manage.jsp">员工管理</a></li>
+			<li><a href="http://localhost:8080/Logistics-system/vehicle_servlet">车辆管理</a></li>
             
         </ul>
 

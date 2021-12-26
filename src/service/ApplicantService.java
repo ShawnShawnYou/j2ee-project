@@ -40,6 +40,10 @@ public class ApplicantService {
 		return appDao.add_order(app);
 	}
 
+	public int update_order(Applicant app) {
+		return appDao.update_order(app);
+	}
+
 	public List<Applicant> srhAll(int pageNo) {
 		return appDao.srhAll(pageNo);
 	}
@@ -65,6 +69,8 @@ public class ApplicantService {
 		
 		return appDao.srhAll_dingdanall(i);
 	}
+
+	public int delete_dingdan(int id) {return appDao.delete_dingdan(id);}
 
 	// 车辆管理
 	public int add_vehicle(Vehicle vehicle) {return appDao.add_vehicle(vehicle);}
