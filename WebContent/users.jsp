@@ -79,11 +79,12 @@
   
       <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>仪表板</a>
       <ul id="dashboard-menu" class="nav nav-list collapse in">
-          <li><a href="http://localhost:8080/Logistics-system/indexservlet">主页</a></li>
-          <li ><a href="http://localhost:8080/Logistics-system/allservlet">账户表</a></li>
-          <li ><a href="user.jsp">修改密码</a></li>
-          <li><a href="http://localhost:8080/Logistics-system/allgoods_servlet">订单操作</a></li>
+          <li><a href="http://localhost:8080/Logistics-system/Stuff.jsp">主页</a></li>
+          <li><a href="http://localhost:8080/Logistics-system/allservlet">用户表</a></li>
+          <li><a href="admin_user.jsp">修改密码</a></li>
+          <li><a href="http://localhost:8080/Logistics-system/admin_allgoods_servlet">订单操作</a></li>
           <li><a href="http://localhost:8080/Logistics-system/lookdingdanservlet">订单统计</a></li>
+          <li><a href="http://localhost:8080/Logistics-system/all_stuff_servlet">员工管理</a></li>
           <li><a href="http://localhost:8080/Logistics-system/vehicle_servlet">车辆管理</a></li>
       </ul>
   
@@ -102,7 +103,7 @@
         </div>
         
                 <ul class="breadcrumb">
-            <li><a href="index.jsp">主页</a> <span class="divider">/</span></li>
+            <li><a href="Stuff.jsp">主页</a> <span class="divider">/</span></li>
             <li class="active">账户表</li>
         </ul>
 
@@ -131,7 +132,7 @@
  <td height="22" align="center">${li.firstname}</td>
  <td height="22" align="center">${li.lastname}</td>
  <td height="22" align="center">${li.addr}</td> 
- <td height="22" align="center" width="100px"><a href="user.jsp"><div width="100px">修改密码</div></a></td>
+ <td height="22" align="center" width="100px"><a href="admin_user.jsp"><div width="100px">修改密码</div></a></td>
  <td> <a href ="http://localhost:8080/Logistics-system/deleteservlet?user_name=${li.zhanghao}">删除</a></td>
 
     </tr>

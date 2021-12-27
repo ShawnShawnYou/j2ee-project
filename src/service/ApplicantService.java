@@ -5,6 +5,7 @@ import java.util.List;
 import dao.ApplicantDao;
 import entity.Applicant;
 import entity.Stuff;
+import entity.Vehicle;
 //import entity.Vehicle;
 
 public class ApplicantService {
@@ -72,20 +73,20 @@ public class ApplicantService {
 
 	public int delete_dingdan(int id) {return appDao.delete_dingdan(id);}
 
-//	// 车辆管理
-//	public int add_vehicle(Vehicle vehicle) {return appDao.add_vehicle(vehicle);}
-//
-//	public int update_vehicle(Vehicle vehicle) {return appDao.update_vehicle(vehicle);}
-//
-//	public int delete_vehicle(int id) {return appDao.delete_vehicle(id);}
-//
-//	public List<Vehicle> get_vehicle(int pageNo) {return appDao.get_vehicle(pageNo);}
-//
-//	public int get_all_vehicle_count() {return appDao.get_all_vehicle_count();}
-//
-//	public List<Vehicle> get_all_vehicle() {
-//		return appDao.get_all_vehicle();
-//	}
+	// 车辆管理
+	public int add_vehicle(Vehicle vehicle) {return appDao.add_vehicle(vehicle);}
+
+	public int update_vehicle(Vehicle vehicle) {return appDao.update_vehicle(vehicle);}
+
+	public int delete_vehicle(int id) {return appDao.delete_vehicle(id);}
+
+	public List<Vehicle> get_vehicle(int pageNo) {return appDao.get_vehicle(pageNo);}
+
+	public int get_all_vehicle_count() {return appDao.get_all_vehicle_count();}
+
+	public List<Vehicle> get_all_vehicle() {
+		return appDao.get_all_vehicle();
+	}
 
 	//增加员工
 	public int add_stuff(Stuff stuff) {return appDao.addAStuff(stuff);}
