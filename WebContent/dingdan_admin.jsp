@@ -136,8 +136,8 @@
 									class="icon-plus"></i> 添加订单</a>
 								<!-- 	<button class="btn btn-info" onclick="srhorder()">查询订单</button>
    			<button class="btn btn-info">批量生成当页订单</button> -->
-								<a href="fahuo.jsp" class="btn btn-primary">我的发货订单</a>
-								<a href="shouhuo.jsp" class="btn btn-primary">我的收货订单</a>
+<%--								<a href="fahuo.jsp" class="btn btn-primary">我的发货订单</a>--%>
+<%--								<a href="shouhuo.jsp" class="btn btn-primary">我的收货订单</a>--%>
 							</div>
 							<div class="btn-group" id="srh-btn" style="display: none;">
 								<form class="search form-inline">

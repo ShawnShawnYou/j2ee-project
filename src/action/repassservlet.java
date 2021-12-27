@@ -32,26 +32,26 @@ public class repassservlet extends HttpServlet {
 		doGet(request, response);
 	}
 	private void repass(HttpServletRequest request, HttpServletResponse response) {
-		//»ñÈ¡´«¹ýÀ´µÄÖµ£¬¼´ÐÞ¸ÄºóµÄpass
+		//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Äºï¿½ï¿½pass
 		String repass = request.getParameter("rpass");
 		System.out.println(repass);
 		
 		repass = (repass != null) ? repass : "";
 		Applicant app = new Applicant();
-		//»ñÈ¡ÕËºÅ£¬Òª´ÓjspÒ³Ãæ»ñÈ¡ ¡£ app.setZhanghao();
+		//ï¿½ï¿½È¡ï¿½ËºÅ£ï¿½Òªï¿½ï¿½jspÒ³ï¿½ï¿½ï¿½È¡ ï¿½ï¿½ app.setZhanghao();
 		app.setMima(repass);
 		String use= (String) request.getSession().getAttribute("use");
-		System.out.println("´ÓjspµÄsession»ñÈ¡µ±Ç°µÄÕË»§£º"+use);
+		System.out.println("ï¿½ï¿½jspï¿½ï¿½sessionï¿½ï¿½È¡ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Ë»ï¿½ï¿½ï¿½"+use);
 		app.setZhanghao(use);
-		//´«ÈëÁ©¸ö²ÎÊý£¬·Ö±ðÊÇÕËºÅÓëÃÜÂë
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		ApplicantService appService = new ApplicantService();
 		int result = appService.repass(app);
-		System.out.println("resultµÄÖµ£º"+result);
+		System.out.println("resultï¿½ï¿½Öµï¿½ï¿½"+result);
 		request.getSession().setAttribute("app", app);
 		try {
 			PrintWriter out = response.getWriter();	
-			System.out.println("ÐÞ¸ÄÖ®Ç°¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£");
-			out.println("<script type='text/javascript'>alert('ÐÞ¸Ä³É¹¦£¬½«·µ»ØµÇÂ¼½çÃæ!');</script>"); 
+			System.out.println("ï¿½Þ¸ï¿½Ö®Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+			out.println("<script type='text/javascript'>alert('ç™»å½•å¤±è´¥!');</script>");
 			out.println("<script>window.location='login.jsp'</script>");
 		} catch (IOException e) {
 			e.printStackTrace();

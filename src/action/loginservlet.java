@@ -68,7 +68,7 @@ public class loginservlet extends HttpServlet {
 			}
 			else {
 				out.println("<script type='text/javascript' >alert('登录成功!');</script>");
-				out.println("<script>window.location='http://localhost:8080/Logistics-system/index.jsp'</script>");
+				out.println("<script>window.location='http://localhost:8080/Logistics-system/indexservlet'</script>");
 
 				System.out.println("��¼�ɹ�");
 			}

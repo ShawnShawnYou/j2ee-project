@@ -138,22 +138,22 @@
 
         </div>
 
-        <div class="row-fluid">
-            <div>
-                <input />
-                <button id="search-btn">搜索</button>
-            </div>
-            <table border="1">
-                <tr>
-                    <th>员工号码</th>
-                    <th>员工姓名</th>
-                </tr>
-                <tr id="stuff-items">
-                    <td>001</td>
-                    <td>Fxy</td>
-                </tr>
-            </table>
-        </div>
+<%--        <div class="row-fluid">--%>
+<%--            <div>--%>
+<%--                <input />--%>
+<%--                <button id="search-btn">搜索</button>--%>
+<%--            </div>--%>
+<%--            <table border="1">--%>
+<%--                <tr>--%>
+<%--                    <th>员工号码</th>--%>
+<%--                    <th>员工姓名</th>--%>
+<%--                </tr>--%>
+<%--                <tr id="stuff-items">--%>
+<%--                    <td>001</td>--%>
+<%--                    <td>Fxy</td>--%>
+<%--                </tr>--%>
+<%--            </table>--%>
+<%--        </div>--%>
 
         <footer>
             <hr>
