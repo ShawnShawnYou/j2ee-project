@@ -10,7 +10,7 @@
     <file url="file://$PROJECT_DIR$/src/action/delete_dingdan_servlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/delete_vehicle_servlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/deleteservlet.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/action/loginservlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/action/loginservlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/submitservlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/update_dingdan_servlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/update_stuff_servlet.java" charset="GBK" />

@@ -21,9 +21,9 @@ public class lookdingdanservlet extends HttpServlet {
 		int dingdan = teachService.getAll_dingdan();
 		System.out.println(dingdan);
 		request.getSession().setAttribute("dingdan", dingdan);
-		
+
 		List<Applicant> list = teachService.srhAll_dingdanall(dingdan);
-		request.getSession().setAttribute("dingdan_alllist", list);
+		request.getSession(). setAttribute("dingdan_alllist", list);
 		System.out.println(list);
 		request.getRequestDispatcher("lookdingdan.jsp").forward(request, response);
 	}
