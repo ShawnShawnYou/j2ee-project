@@ -34,24 +34,22 @@ public class loginservlet extends HttpServlet {
 		String password = request.getParameter("password");
 		ApplicantDao appdao = new ApplicantDao();
 		String db_pass = appdao.srhpass(use); // �����ݿ��л�ȡ�����룬������db_pass��
-//		System.out.println(use);
+		System.out.println(use);
+		String db_fristname = appdao.srhFirstname(use);
+		System.out.println(db_fristname);
 		// ��ȡ��
-//		String db_fristname = appdao.srhFirstname(use);
-//		System.out.println(db_fristname);
-//		// ��ȡ��
-//		String db_lastname = appdao.srhLastname(use);
-//		System.out.println(db_lastname);
-//		// ��ȡ��ַ
-//		String db_addr = appdao.srhaddr(use);
-//		System.out.println(db_addr);
-//		// ʹ��getsession��������ȷ�����ݵ��������ڲ���̫���������ݶ�ʧ
-//		request.getSession().setAttribute("LFname", (db_fristname + " " + db_lastname));
-		// ����ֵ��
-//		request.getSession().setAttribute("db_fristname", db_fristname);
-//		request.getSession().setAttribute("db_lastname", db_lastname);
-//		request.getSession().setAttribute("db_addr", db_addr);
-//		request.getSession().setAttribute("use", use);
-//		request.getSession().setAttribute("db_pass", db_pass);
+		String db_lastname = appdao.srhLastname(use);
+		System.out.println(db_lastname);
+		// ��ȡ��ַ
+		String db_addr = appdao.srhaddr(use);
+		System.out.println(db_addr);
+		// ʹ��getsession��������ȷ�����ݵ��������ڲ���̫���������ݶ�ʧ
+		request.getSession().setAttribute("LFname", (db_fristname + " " + db_lastname));
+		request.getSession().setAttribute("db_fristname", db_fristname);
+		request.getSession().setAttribute("db_lastname", db_lastname);
+		request.getSession().setAttribute("db_addr", db_addr);
+		request.getSession().setAttribute("use", use);
+		request.getSession().setAttribute("db_pass", db_pass);
 
 //�˴���Ҫע�������ʹ�ñ��ύ���ݹ�������String���������ͣ��ڽ���equals�ж�ʱint�����String����ʱ������ȵģ���ʹ�ǿ�����ֵ�����
 //		System.out.println(password);

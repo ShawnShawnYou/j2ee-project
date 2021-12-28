@@ -24,7 +24,7 @@ public class signupservlet extends HttpServlet {
 		//ApplicantDao appdao =new ApplicantDao();
 		add(request,response);		
 		PrintWriter out = response.getWriter();		      			   
-		out.println("<script type='text/javascript' >alert('×¢²á³É¹¦!');</script>"); 
+		out.println("<script type='text/javascript' >alert('æ³¨å†ŒæˆåŠŸ');</script>");
 		out.println("<script>window.location='index.jsp'</script>");
 	}
 
@@ -35,14 +35,14 @@ public class signupservlet extends HttpServlet {
 
 	public void add(HttpServletRequest request, HttpServletResponse response) {
 
-		//»ñÈ¡ÔÚ×¢²áÒ³ÃæÊäÈëµÄÖµ
+		//ï¿½ï¿½È¡ï¿½ï¿½×¢ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 		String zcfname = request.getParameter("zc_fname");
 		String zclname = request.getParameter("zc_lname");
 		String zcaddr=request.getParameter("zc_addr");
 		String zcuser=request.getParameter("zc_name");
 		String zcpass=request.getParameter("zc_pass");
 		
-		//ÑéÖ¤ÊÇ·ñÓĞÊä³ö 
+		//ï¿½ï¿½Ö¤ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 		System.out.println(zcfname+zclname+zcaddr+zcuser+zcpass);
 		zcfname = (zcfname != null) ? zcfname : "";
 		zclname = (zclname != null) ? zclname : "";
@@ -63,8 +63,8 @@ public class signupservlet extends HttpServlet {
 		if (result > 0) {
 			try {
 				PrintWriter out = response.getWriter();	
-				out.println("<script type='text/javascript' >alert('×¢²á³É¹¦!');</script>"); 
-				out.println("<script>window.location='index.jsp'</script>");
+				out.println("<script type='text/javascript' >alert('æ³¨å†ŒæˆåŠŸ');</script>");
+				out.println("<script>window.location='login.jsp'</script>");
 				//request.getRequestDispatcher("index.jsp").forward(request, response);
 			} catch (IOException e) {				
 				e.printStackTrace();
@@ -72,7 +72,7 @@ public class signupservlet extends HttpServlet {
 		} else {
 			try {
 				PrintWriter out = response.getWriter();
-				out.println("<script>alert('Ìí¼ÓÊ§°Ü¡£');window.location.href=\"sign-up.jsp\"</script>");
+				out.println("<script>alert('æ³¨å†Œå¤±è´¥');window.location.href=\"sign-up.jsp\"</script>");
 				out.close();
 			} catch (IOException e) {				
 				e.printStackTrace();
