@@ -134,8 +134,8 @@
                         <tr>
                             <th class="col-md-2">001</th>
                             <th class="col-md-2">签字笔</th>
-                            <th class="col-md-2">admin</th>
                             <th class="col-md-2">FXY</th>
+                            <th class="col-md-2">admin</th>
                             <th class="col-md-2">10</th>
                             <th class="col-md-2">2021.12.01</th>
                         </tr>
@@ -145,8 +145,8 @@
                         <tr>
                             <th class="col-md-2">002</th>
                             <th class="col-md-2">作业本</th>
+                            <th class="col-md-2">FXY</th>
                             <th class="col-md-2">admin</th>
-                            <th class="col-md-2">FHY</th>
                             <th class="col-md-2">2</th>
                             <th class="col-md-2">2021.12.01</th>
                         </tr>

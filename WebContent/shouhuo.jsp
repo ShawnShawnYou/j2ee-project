@@ -133,8 +133,8 @@
                             <tr>
                                 <th class="col-md-2">003</th>
                                 <th class="col-md-2">iPhone13</th>
-                                <th class="col-md-2">Santa</th>
                                 <th class="col-md-2">admin</th>
+                                <th class="col-md-2">FXY</th>
                                 <th class="col-md-2">20</th>
                                 <th class="col-md-2">2021.12.01</th>
                             </tr>
@@ -144,10 +144,10 @@
                             <tr>
                                 <th class="col-md-2">004</th>
                                 <th class="col-md-2">成绩单</th>
-                                <th class="col-md-2">Teacher</th>
                                 <th class="col-md-2">admin</th>
+                                <th class="col-md-2">FXY</th>
                                 <th class="col-md-2">2</th>
-                                <th class="col-md-2">2022.1.1</th>
+                                <th class="col-md-2">2021.12.01</th>
                             </tr>
                             </thead>
 

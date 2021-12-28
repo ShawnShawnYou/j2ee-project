@@ -217,7 +217,7 @@
         function transfer() {
     		var pageSize = document.getElementById("pageSize" ).value;
     		if(pageSize!=null||pageSize!="")
-    		   window.location.href="http://localhost:8080/Logistics-system/allgoods_servlet?pageNo="+pageSize;
+    		   window.location.href="http://localhost:8080/Logistics-system/admin_allgoods_servlet?pageNo="+pageSize;
     		alert("即将跳转")//可以获取到该值
     	}
 		function update_vehicle(vehicle_id) {

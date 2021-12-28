@@ -54,7 +54,7 @@ public class add_vehicle_servlet extends HttpServlet {
 			try {
 				PrintWriter out = response.getWriter();	
 				out.println("<script type='text/javascript' >alert('Ìí¼Ó³É¹¦£¡');</script>"); 
-				out.println("<script>window.location='vehicle_manage.jsp'</script>");
+				out.println("<script>window.location='http://localhost:8080/Logistics-system/vehicle_servlet'</script>");
 			} catch (IOException e) {				
 				e.printStackTrace();
 			}

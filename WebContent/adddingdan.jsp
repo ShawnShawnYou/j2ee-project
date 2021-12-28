@@ -114,7 +114,7 @@
     
     	<div class="container-fluid">
     		<div class="row-fluid">
-    		<form method="get" action="http://localhost:8080/Logistics-system/submitservlet">
+    		<form method="get" action="http://localhost:8080/Logistics-system/admin_submitservlet">
     			<div class="btn-toolbar" style="margin-left: 25px;">    
     				<a href="adddingdan.jsp" class="btn">重置</a>
     				<div class="btn-group"></div>

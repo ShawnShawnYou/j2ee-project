@@ -64,13 +64,13 @@ public class loginservlet extends HttpServlet {
 				out.println("<script type='text/javascript' >alert('登录成功!');</script>");
 				out.println("<script>window.location='http://localhost:8080/Logistics-system/Stuff.jsp'</script>");
 
-				System.out.println("��¼�ɹ�");
+//				System.out.println("��¼�ɹ�");
 			}
 			else {
 				out.println("<script type='text/javascript' >alert('登录成功!');</script>");
 				out.println("<script>window.location='http://localhost:8080/Logistics-system/indexservlet'</script>");
 
-				System.out.println("��¼�ɹ�");
+//				System.out.println("��¼�ɹ�");
 			}
 		} else { // ����½������˺����벻��ʱ��������ת����ǰҳ�棬��������ʹ��js�����������
 			out.println("<script type='text/javascript' >alert('登录失败!');</script>");

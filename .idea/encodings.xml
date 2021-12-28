@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/action/add_vehicle_servlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/admin_allgoods_servlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/action/admin_submitservlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/all_vehicle_servlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/allgoods_servlet.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/action/allservlet.java" charset="GBK" />
